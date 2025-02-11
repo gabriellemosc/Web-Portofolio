@@ -34,9 +34,8 @@ const HeroSection = () => {
             />
             </span>
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            voluptuous.
+            <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl welcome_p">
+          Welcome to my Web Portfolio, I created this website with the intention of showing a little about myself, projects and technologies that I use in development.
           </p>
           <div>
             <Link
