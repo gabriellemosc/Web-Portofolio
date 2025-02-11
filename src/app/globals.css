@@ -25,3 +25,51 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+.welcome_h1{
+  font-weight: 700;
+  font-size: 90px;
+  color: #f3ebeb;
+}
+
+.animacao_h1{
+  color: #3b74bb !important;
+  font-weight: 700;
+
+}
+
+/* Estilos base para a classe welcome_p */
+.welcome_p {
+  transition: color 0.3s ease, transform 0.3s ease; /* Transição suave para cor e transformação */
+  font-size: 25px !important;
+  font-weight: 700;
+}
+
+/* Efeito hover para a classe welcome_p */
+.welcome_p:hover {
+  color: #3184e9;         /* Altera a cor do texto quando o mouse passa por cima */
+  transform: scale(1.10); /* Aumenta levemente o tamanho do elemento */
+}
+
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px; /* Espaçamento interno */
+  background-color: #00aeff; /* Cor de fundo (azul escuro) */
+  border: 2px solid #0a0a0a; /* Borda de cor cinza-azulada */
+  border-radius: 20px; /* Bordas arredondadas */
+  transition: all 0.3s ease-in-out;
+}
+
+.logo-link img {
+  filter: drop-shadow(2px 4px 6px rgba(255, 255, 255, 2)); /* Sombra na imagem */
+}
+
+.logo-link:hover {
+  transform: scale(1.02 ); /* Efeito de leve zoom */
+  background-color: #20333b; /* Fundo um pouco mais claro ao passar o mouse */
+  border-color: #ffffff; /* Borda muda de cor no hover */
+}
