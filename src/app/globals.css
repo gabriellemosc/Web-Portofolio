@@ -105,3 +105,47 @@ body {
   width: 100%; /* Faz o sublinhado crescer do início ao fim */
 }
 
+.botoes_inicio {
+  font-size: 1.2rem !important; /* Tamanho do texto */
+  font-weight: bold !important;
+  color: rgb(15, 15, 15) !important;
+  padding: 12px 24px !important; /* Ajusta o tamanho interno */
+  border-radius: 50px !important; /* Bordas arredondadas */
+  border: 2px solid transparent !important; /* Começa sem borda visível */
+  font-weight: bold   ;
+  background: linear-gradient(135deg, #7f71bd, #00ffff) !important; /* Inverte o gradiente */
+  transition: all 0.3s ease-in-out !important; /* Transição suave */
+  display: inline-block !important; /* Para alinhar corretamente */
+  text-align: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  margin-left: 10px;
+  margin-top: 25px;
+}
+
+.botoes_inicio:hover {
+  transform: scale(1.05) !important; /* Aumenta levemente o botão */
+  background: linear-gradient(135deg, #340edd, #00ffd5) !important; /* Inverte o gradiente */
+  border-color: rgba(255, 255, 255, 0.5) !important; /* Mostra a borda com efeito de brilho */
+  box-shadow: 0 0 15px rgba(151, 149, 149, 0.6) !important; /* Adiciona um brilho sutil */
+}
+
+/* Efeito de brilho passando pelo botão */
+.botoes_inicio::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: skewX(-45deg) !important;
+  transition: left 0.5s !important;
+}
+
+.botoes_inicio:hover::before {
+  left: 100% !important;
+}
+
+
+
