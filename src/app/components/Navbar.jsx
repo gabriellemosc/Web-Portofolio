@@ -19,6 +19,10 @@ const navLinks = [
     title: "Contact",
     path: "#contact",
   },
+  {
+    title: "Resume",
+    path: "/cv", // Rota para a página do currículo
+  }
 ];
 
 const Navbar = () => {
