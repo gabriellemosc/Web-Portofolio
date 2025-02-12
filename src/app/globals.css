@@ -26,7 +26,7 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-
+/* NAV BAR */
 .welcome_h1{
   font-weight: 700;
   font-size: 90px;
@@ -49,7 +49,7 @@ body {
 /* Efeito hover para a classe welcome_p */
 .welcome_p:hover {
   color: #3184e9;         /* Altera a cor do texto quando o mouse passa por cima */
-  transform: scale(1.10); /* Aumenta levemente o tamanho do elemento */
+  transform: scale(1.05); /* Aumenta levemente o tamanho do elemento */
 }
 
 
@@ -73,3 +73,35 @@ body {
   background-color: #20333b; /* Fundo um pouco mais claro ao passar o mouse */
   border-color: #ffffff; /* Borda muda de cor no hover */
 }
+
+
+.nav_text {
+  font-weight: 700 !important;
+  color: #cec8c8;
+  font-size: 23px !important;
+  position: relative;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.nav_text:hover {
+  color: #ffffff; /* Muda para branco ao passar o mouse */
+  text-shadow: 0px 0px 10px rgba(131, 119, 119, 0.2); /* Efeito de brilho */
+  transform: scale(1.05); /* Aumenta um pouco o tamanho */
+}
+
+/* Sublinhado animado */
+.nav_text::after {
+  content: "";
+  position: absolute;
+  left: 0;                                                                                                        
+  bottom: -3px; /* Distância do sublinhado */
+  width: 0;
+  height: 2px; /* Espessura do sublinhado */
+  background-color: #ffffff; /* Cor do sublinhado */
+  transition: width 0.3s ease-in-out;
+}
+
+.nav_text:hover::after {
+  width: 100%; /* Faz o sublinhado crescer do início ao fim */
+}
+
