@@ -20,7 +20,7 @@ const navLinks = [
     path: "#contact",
   },
   {
-    title: "Resume",
+    title: "CV",
     path: "/cv", // Rota para a página do currículo
   }
 ];
