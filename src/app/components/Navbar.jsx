@@ -10,18 +10,26 @@ const navLinks = [
   {
     title: "About",
     path: "#about",
+    icon: "/person.svg", // Adicionamos um ícone apenas no About
+
   },
   {
     title: "Projects",
     path: "#projects",
+    icon: "/project.svg", // Adicionamos um ícone apenas no About
+
   },
   {
     title: "Contact",
     path: "#contact",
+    icon: "/contact.svg", // Adicionamos um ícone apenas no About
+
   },
   {
     title: "CV",
     path: "/cv", // Rota para a página do currículo
+    icon: "/resume.svg", // Adicionamos um ícone apenas no About
+
   }
 ];
 
@@ -55,7 +63,7 @@ const Navbar = () => {
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
               <li key={index}>
-                <NavLink href={link.path} title={link.title} />
+                <NavLink href={link.path} title={link.title} icon={link.icon} />
               </li>
             ))}
           </ul>

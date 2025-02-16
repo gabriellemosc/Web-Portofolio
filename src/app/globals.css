@@ -5,7 +5,7 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,12 +20,22 @@ body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(0, 0, 0), /* Escuro para o início do gradiente */
+      rgb(30, 33, 34)  /* Um tom mais escuro para o final */
+    );
 }
 
+#tsparticles {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important; /* Ocupa toda a tela */
+  height: 100% !important; /* Ocupa toda a tela */
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  z-index: -1 !important; /* Garante que o canvas fique no fundo */
+  pointer-events: none !important; /* Evita interferir nas interações do usuário */
+}
 
 #preloader {
   position: fixed;
@@ -59,6 +69,7 @@ body {
   font-weight: 700;
   font-size: 90px;
   color: #f3ebeb;
+
 }
 
 .animacao_h1{
@@ -72,6 +83,7 @@ body {
   transition: color 0.3s ease, transform 0.3s ease; /* Transição suave para cor e transformação */
   font-size: 25px !important;
   font-weight: 700;
+ 
 }
 
 /* Efeito hover para a classe welcome_p */
@@ -174,6 +186,10 @@ body {
 .botoes_inicio:hover::before {
   left: 100% !important;
 }
+
+
+
+
 
 
 
