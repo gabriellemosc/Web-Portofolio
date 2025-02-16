@@ -9,7 +9,6 @@ import ProjectsSection from "./components/ProjectsSection";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
 import AchievementsSection from "./components/AchievementsSection";
-import Particle from "./components/Particle"; // ⬅ Importando o componente de partículas
 
 
 export default function Home() {
@@ -28,7 +27,6 @@ export default function Home() {
       {loading && <Preloader />}
       {!loading && (
 <main className="flex min-h-screen flex-col relative bg-transparent">
-       <Particle /> {/* ⬅ Adicionando o fundo de partículas */}
 
           <Navbar />
           <div className="container mt-24 mx-auto px-12 py-4">

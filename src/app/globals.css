@@ -25,17 +25,6 @@ body {
     );
 }
 
-#tsparticles {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important; /* Ocupa toda a tela */
-  height: 100% !important; /* Ocupa toda a tela */
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  z-index: -1 !important; /* Garante que o canvas fique no fundo */
-  pointer-events: none !important; /* Evita interferir nas interações do usuário */
-}
 
 #preloader {
   position: fixed;
@@ -98,20 +87,16 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1px; /* Espaçamento interno */
-  background-color: #00aeff; /* Cor de fundo (azul escuro) */
+  background-color: #eaedf1; /* Cor de fundo (azul escuro) */
   border: 2px solid #0a0a0a; /* Borda de cor cinza-azulada */
   border-radius: 20px; /* Bordas arredondadas */
   transition: all 0.3s ease-in-out;
 }
 
-.logo-link img {
-  filter: drop-shadow(2px 4px 6px rgba(255, 255, 255, 2)); /* Sombra na imagem */
-}
 
 .logo-link:hover {
-  transform: scale(1.02 ); /* Efeito de leve zoom */
-  background-color: #20333b; /* Fundo um pouco mais claro ao passar o mouse */
-  border-color: #ffffff; /* Borda muda de cor no hover */
+  transform: scale(1.04 ); /* Efeito de leve zoom */
+  background-color: #5fc5e4; /* Fundo um pouco mais claro ao passar o mouse */
 }
 
 
