@@ -319,6 +319,19 @@ body {
   
 }
 
+/* Estado inicial: escondido e deslocado para a esquerda */
+.about-image {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Quando visível na tela */
+.about-image.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 
 
 
