@@ -1,5 +1,5 @@
 "use client";
-import React, { useTransition, useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
@@ -44,45 +44,36 @@ const AboutSection = () => {
   const [tab, setTab] = useState("skills");
   const [isTitleVisible, setIsTitleVisible] = useState(false);
   const [isTextVisible, setIsTextVisible] = useState(false);
-  
+  const [isTopicsVisible, setIsTopicsVisible] = useState(false);
+
   const titleRef = useRef(null);
   const textRef = useRef(null);
+  const topicsRef = useRef(null);
 
   const handleTabChange = (id) => {
     setTab(id);
   };
 
-  // Observer para o título
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsTitleVisible(entry.isIntersecting);
-      },
-      { threshold: 0.5 }
-    );
+  const useIntersectionObserver = (ref, setState) => {
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setState(entry.isIntersecting);
+        },
+        { threshold: 0.5 }
+      );
 
-    if (titleRef.current) observer.observe(titleRef.current);
+      if (ref.current) observer.observe(ref.current);
 
-    return () => {
-      if (titleRef.current) observer.unobserve(titleRef.current);
-    };
-  }, []);
+      return () => {
+        if (ref.current) observer.unobserve(ref.current);
+      };
+    }, [ref, setState]);
+  };
 
-  // Observer para o texto
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsTextVisible(entry.isIntersecting);
-      },
-      { threshold: 0.5 }
-    );
-
-    if (textRef.current) observer.observe(textRef.current);
-
-    return () => {
-      if (textRef.current) observer.unobserve(textRef.current);
-    };
-  }, []);
+  useIntersectionObserver(titleRef, setIsTitleVisible);
+  useIntersectionObserver(textRef, setIsTextVisible);
+  useIntersectionObserver(topicsRef, setIsTopicsVisible);
 
   return (
     <section className="text-white" id="about">
@@ -105,7 +96,10 @@ const AboutSection = () => {
             always looking to expand my knowledge and skill set. I am a team player and I am excited 
             to work with others to create amazing applications.
           </p>
-          <div className="flex flex-row justify-start mt-8">
+          <div 
+            ref={topicsRef} 
+            className={`flex flex-row justify-start mt-8 topics_about ${isTopicsVisible ? "animate-visible" : ""}`}
+          >
             <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"}>
               Skills
             </TabButton>

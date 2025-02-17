@@ -257,6 +257,69 @@ body {
 
 
 
+/* Oculta e posiciona a div fora da tela (esquerda) */
+.topics_about {
+  opacity: 0;
+  font-weight: 900;
+  font-size: 18px;
+  transform: translateX(-50px); /* Inicia deslocada para a esquerda */
+  filter: blur(5px);
+  transition: opacity 1s ease-out, transform 1s ease-out, filter 1s ease-out; 
+  
+}
+
+/* Escondendo a linha extra */
+.topics_about .h-1.bg-primary-500 {
+  display: none !important;
+}
+/* Quando visível na tela */
+.topics_about.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+/* Efeito de sublinha ao passar o mouse */
+.topics_about {
+  opacity: 0;
+  font-weight: 1000 !important;
+  font-size: 20px;
+  transform: translateX(-50px); /* Inicia deslocada para a esquerda */
+  filter: blur(5px);
+  transition: opacity 1s ease-out, transform 1s ease-out, filter 1s ease-out;
+}
+
+/* Quando visível na tela */
+.topics_about.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+/* Efeito de sublinha ao passar o mouse */
+.topics_about button {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.topics_about button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Ajuste a altura da linha */
+  width: 0;
+  height: 5px; /* Espessura da linha */
+  background-color: rgb(5, 221, 236); /* Cor da linha */
+  transition: width 0.4s ease-in-out;
+}
+
+.topics_about button:hover::after {
+  width: 90%;
+  
+}
+
+
 
 
 
