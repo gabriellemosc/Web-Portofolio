@@ -60,25 +60,23 @@ const AboutSection = () => {
 
   // Conteúdo dos ícones (aba Skills)
   const skillsContent = (
-    <div>
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 mt-6">
-        {TOOL_ICONS.map((tool, index) => (
-          <div
-            key={tool.name}
-            className={`flex flex-col items-center transition-transform duration-500 ease-out transform ${
-              isIconsVisible ? "icon-visible" : "icon-hidden"
-            }`}
-            style={{ transitionDelay: `${index * 100}ms` }}
-          >
-            <div className="relative group">
-              <Image src={tool.src} alt={tool.name} width={50} height={50} />
-              <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm mt-2 text-white">
-                {tool.name}
-              </span>
+    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 mt-6">
+      {TOOL_ICONS.map((tool, index) => (
+        <div
+          key={tool.name}
+          className={`group flex flex-col items-center transition-transform duration-500 ease-out transform ${
+            isIconsVisible ? "icon-visible" : "icon-hidden"
+          }`}
+          style={{ transitionDelay: `${index * 100}ms` }}
+        >
+          <div className="relative group">
+            <div className="icon-container">
+              <Image src={tool.src} alt={tool.name} width={50} height={50} className="icon" />
             </div>
+            <span className="tool-name">{tool.name}</span> {/* Nome do ícone */}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 
