@@ -333,9 +333,16 @@ body {
 }
 
 
+.icon-hidden {
+  opacity: 0;
+  transform: translateX(20px); /* Inicia 20px à direita */
+}
 
-
-
+.icon-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
 
 
 
