@@ -98,10 +98,34 @@ const useIntersectionObserver = (ref, setState) => {
       title: "Education",
       id: "education",
       content: (
-        <ul className="list-disc pl-2">
-          <li>Fullstack Academy of Code</li>
-          <li>University of California, Santa Cruz</li>
-        </ul>
+        <div
+        ref={textRef}
+        className={`text-base lg:text-lg about_text ${isTextVisible ? "animate-visible" : ""}`}
+        >
+        <ul className="list-disc pl-2 education relative">
+        <li>University Santo Andre, Sao Paulo</li>
+        <span className="education-subtitle relative inline-block group">
+          <a
+            href="https://www.fsa.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-3 py-1 bg-black text-cyan-400 font-bold rounded-md transition-all duration-300 transform hover:scale-105 hover:bg-gray-800"
+          >
+            Foundation Santo Andre
+          </a>
+          {/* Pré-visualização com imagem */}
+          <div className="preview-box absolute left-1/2 transform -translate-x-1/2 bottom-full w-64 h-40 bg-white border border-gray-300 rounded-md shadow-lg hidden group-hover:block z-50">
+            <img
+              src="fsa_site.png" 
+              alt="FSA Site"
+              className="w-full h-full object-cover rounded-md"
+            />
+          </div>
+        </span>
+      </ul>
+      </div>
+      
+      
       ),
     },
     {
