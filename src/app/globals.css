@@ -359,7 +359,9 @@ body {
   opacity: 0; /* Nome fica invisível inicialmente */
   transform: translateY(-10px); /* Ajusta para a posição inicial do nome */
   font-weight: 700;
+  margin: 4px;
   color: #95ecec;
+  text-align:end;
   z-index: 10; /* Coloca o nome sobre o ícone */
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -368,14 +370,6 @@ body {
   opacity: 1 !important; /* Nome fica visível */
   transform: translateY(0); /* Move o nome para sua posição final */
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -392,6 +386,37 @@ body {
   filter: blur(1px);
 }
 
+.certificacoes li {
+  position: relative;
+  padding: 15px 15px 15px 50px; /* Aumentei o padding-left para dar mais espaço ao texto */
+  list-style: none;
+  border-radius: 10px;
+  background: rgba(7, 7, 7, 0.05);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 3px;
+}
+
+.certificacoes li:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 10px rgba(0, 225, 255, 0.3), 
+              0px 0px 15px rgba(0, 247, 255, 0.6);
+}
+
+.certificacoes li::before {
+  content: "🎓"; 
+  position: absolute;
+  left: 15px; /* Move o ícone um pouco para a direita */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: #3a00db; 
+  transition: transform 0.3s ease;
+}
+
+.certificacoes li:hover::before {
+  transform: translateY(-50%) rotate(10deg);
+}
 
 
 

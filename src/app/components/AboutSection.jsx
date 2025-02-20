@@ -25,38 +25,45 @@ const AboutSection = () => {
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [isTopicsVisible, setIsTopicsVisible] = useState(false);
   const [isIconsVisible, setIsIconsVisible] = useState(false);
+  const [isCertificationsVisible, setIsCertificationsVisible] = useState(false);  //certicicado
 
   const titleRef = useRef(null);
   const textRef = useRef(null);
   const topicsRef = useRef(null);
   const iconsRef = useRef(null);
+  const certificationsRef = useRef(null);  //certificado
+
 
   const handleTabChange = (id) => {
     setTab(id);
   };
 
   // Hook customizado para usar o IntersectionObserver
-  const useIntersectionObserver = (ref, setState) => {
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setState(entry.isIntersecting);
-        },
-        { threshold: 0.5 }
-      );
+ // Hook customizado para usar o IntersectionObserver
+const useIntersectionObserver = (ref, setState) => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setState(entry.isIntersecting); // Altera o estado quando o elemento entra ou sai da tela
+      },
+      { threshold: 0.5 } // Considera o elemento como visível quando 50% dele entra na tela
+    );
 
-      if (ref.current) observer.observe(ref.current);
+    if (ref.current) observer.observe(ref.current); // Observa o elemento
 
-      return () => {
-        if (ref.current) observer.unobserve(ref.current);
-      };
-    }, [ref, setState]);
-  };
+    return () => {
+      if (ref.current) observer.unobserve(ref.current); // Limpa o observador ao desmontar o componente
+    };
+  }, [ref, setState]);
+};
+
 
   useIntersectionObserver(titleRef, setIsTitleVisible);
   useIntersectionObserver(textRef, setIsTextVisible);
   useIntersectionObserver(topicsRef, setIsTopicsVisible);
   useIntersectionObserver(iconsRef, setIsIconsVisible);
+  useIntersectionObserver(certificationsRef, setIsCertificationsVisible);
+
 
   // Conteúdo dos ícones (aba Skills)
   const skillsContent = (
@@ -101,10 +108,19 @@ const AboutSection = () => {
       title: "Certifications",
       id: "certifications",
       content: (
-        <ul className="list-disc pl-2">
-          <li>AWS Cloud Practitioner</li>
-          <li>Google Professional Cloud Developer</li>
+        <div
+        ref={textRef}
+        className={`text-base lg:text-lg about_text ${isTextVisible ? "animate-visible" : ""}`}
+        >
+        <ul className="list-disc pl-2 certificacoes">
+          <li>AWS Impressionador - Hashtag Treinamentos</li>
+          <li>Python Impressionador - Hashtag Treinamentos</li>
+          <li>SQL - Hashtag Treinamentos</li>
+          <li>Advanced Linux - Estudonauta</li>
         </ul>
+      </div>
+      
+      
       ),
     },
   ];
