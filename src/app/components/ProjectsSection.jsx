@@ -91,23 +91,18 @@ const ProjectsSection = () => {
         My Projects
       </motion.h2>
 
-      <div className="text-white flex flex-row justify-center items-center gap-10 py-10 button_projects">
-        <ProjectTag
-          onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
-        />
-      </div>
+      <div ref={ref} className="overflow-hidden">
+        <motion.div
+          className="text-white flex flex-row justify-center items-center gap-10 py-10 button_projects"
+          initial={{ x: "-100%", opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : { x: "-100%", opacity: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <ProjectTag onClick={handleTagChange} name="All" isSelected={tag === "All"} />
+          <ProjectTag onClick={handleTagChange} name="Web" isSelected={tag === "Web"} />
+          <ProjectTag onClick={handleTagChange} name="Mobile" isSelected={tag === "Mobile"} />
+        </motion.div>
+    </div>
 
       {/* Mantendo a <ul> sem ref para evitar conflitos */}
       <ul className="grid md:grid-cols-3 gap-8 md:gap-12">
