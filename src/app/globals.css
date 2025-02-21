@@ -496,6 +496,54 @@ body {
   border-radius: 8px;
 }
 
+/* MY PROJECTS */
+
+
+.animate-title {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.myprojectsh1 {
+  background: linear-gradient(90deg, #00eeff, #00bfff, #00ff15);
+  background-size: 200%;
+  font-size: 40px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s infinite alternate;
+  text-shadow: 2px 2px 4px rgba(73, 71, 71, 0.3);
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+
+.button_projects button {
+  padding: 12px 24px;
+  border-radius: 30px;
+  background: #111;
+  color: rgb(206, 189, 189);
+  font-weight: 900;
+  border: 2px solid rgb(39, 197, 197);
+  box-shadow: 0 0 10px rgba(126, 121, 121, 0.5);
+  transition: all 0.3s;
+}
+
+.button_projects button:hover {
+  background: rgb(39, 197, 197);
+  color: rgb(0, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -16,7 +16,7 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
+    title: "Photography Portfolio Website",
     description: "Project 2 description",
     image: "/images/projects/2.png",
     tag: ["All", "Web"],
@@ -64,7 +64,7 @@ const projectsData = [
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { amount: 0.5, triggerOnce: false });
 
   const handleTagChange = (newTag) => {
     setTag(newTag);
@@ -81,10 +81,17 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+      <motion.h2
+        ref={ref}
+        className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12 myprojectsh1 animate-title"
+        initial={{ y: 50, opacity: 0 }}
+        animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         My Projects
-      </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+      </motion.h2>
+
+      <div className="text-white flex flex-row justify-center items-center gap-10 py-10 button_projects">
         <ProjectTag
           onClick={handleTagChange}
           name="All"
@@ -101,25 +108,33 @@ const ProjectsSection = () => {
           isSelected={tag === "Mobile"}
         />
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
-          >
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-            />
-          </motion.li>
-        ))}
+
+      {/* Mantendo a <ul> sem ref para evitar conflitos */}
+      <ul className="grid md:grid-cols-3 gap-8 md:gap-12">
+        {filteredProjects.map((project, index) => {
+          const itemRef = useRef(null);
+          const itemInView = useInView(itemRef, { amount: 0.3 });
+
+          return (
+            <motion.li
+              key={index}
+              ref={itemRef} // Ref para cada item individual
+              variants={cardVariants}
+              initial="initial"
+              animate={itemInView ? "animate" : "initial"}
+              transition={{ duration: 0.3, delay: index * 0.4 }}
+            >
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+              />
+            </motion.li>
+          );
+        })}
       </ul>
     </section>
   );
