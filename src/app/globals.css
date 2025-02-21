@@ -535,6 +535,18 @@ body {
 }
 
 
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ou "contain", dependendo do efeito desejado */
+  border-radius: 8px; /* Opcional */
+}
+
+.project-description {
+  font-size: 14px;
+  font-style: italic;
+  color: #0095ff;
+}
 
 
 

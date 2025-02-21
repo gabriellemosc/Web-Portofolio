@@ -8,11 +8,11 @@ const projectsData = [
   {
     id: 1,
     title: "React Portfolio Website",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
+    description: "A Portfolio Terminal built with Javascript that tells a little more about me",
+    image: "/images/projects/terminal_portfolio.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
+    previewUrl: "https://gabriellemosc.github.io/Porfolio-Terminal/",
   },
   {
     id: 2,
@@ -61,6 +61,31 @@ const projectsData = [
   },
 ];
 
+  const ProjectItem = ({ project, index }) => {
+    const itemRef = useRef(null);
+    const itemInView = useInView(itemRef, { amount: 0.3 });
+
+    return (
+      <motion.li
+        ref={itemRef}
+        initial={{ y: 50, opacity: 0 }}
+        animate={itemInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+        transition={{ duration: 0.3, delay: index * 0.2 }}
+      >
+        <ProjectCard
+          title={project.title}
+          description={project.description}
+          imgUrl={project.image}
+          gitUrl={project.gitUrl}
+          previewUrl={project.previewUrl}
+          className="project-image"
+          descriptionClass="project-description" // Agora a classe CSS será aplicada!
+
+        />
+      </motion.li>  
+    );
+  };
+
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
@@ -73,11 +98,6 @@ const ProjectsSection = () => {
   const filteredProjects = projectsData.filter((project) =>
     project.tag.includes(tag)
   );
-
-  const cardVariants = {
-    initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-  };
 
   return (
     <section id="projects">
@@ -102,34 +122,12 @@ const ProjectsSection = () => {
           <ProjectTag onClick={handleTagChange} name="Web" isSelected={tag === "Web"} />
           <ProjectTag onClick={handleTagChange} name="Mobile" isSelected={tag === "Mobile"} />
         </motion.div>
-    </div>
+      </div>
 
-      {/* Mantendo a <ul> sem ref para evitar conflitos */}
       <ul className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => {
-          const itemRef = useRef(null);
-          const itemInView = useInView(itemRef, { amount: 0.3 });
-
-          return (
-            <motion.li
-              key={index}
-              ref={itemRef} // Ref para cada item individual
-              variants={cardVariants}
-              initial="initial"
-              animate={itemInView ? "animate" : "initial"}
-              transition={{ duration: 0.3, delay: index * 0.4 }}
-            >
-              <ProjectCard
-                key={project.id}
-                title={project.title}
-                description={project.description}
-                imgUrl={project.image}
-                gitUrl={project.gitUrl}
-                previewUrl={project.previewUrl}
-              />
-            </motion.li>
-          );
-        })}
+        {filteredProjects.map((project, index) => (
+          <ProjectItem key={project.id} project={project} index={index} />
+        ))}
       </ul>
     </section>
   );
