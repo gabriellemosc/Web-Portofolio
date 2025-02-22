@@ -540,16 +540,32 @@ body {
   height: 100%;
   object-fit: cover; /* ou "contain", dependendo do efeito desejado */
   border-radius: 8px; /* Opcional */
+  
+}
+
+
+.titulo_projeto{
+  font-weight: 700;
+  position: relative;
+  top: -22px; /* Ajuste conforme necessário */
+  margin-left: -15px;
+  color: #ffffff;
+  font-weight: 900;
 }
 
 .project-description {
-  font-size: 14px;
+  font-size: 16px;
   font-style: italic;
-  color: #0095ff;
+  color: #b0d5ff;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3);
+  border-left: 4px solid #b0d5ff;
+  padding-left: 8px;
+  position: relative;
+  top: -20px; /* Ajuste conforme necessário */  
+  margin-left: -8px;
 }
-
-
-
 
 
 
