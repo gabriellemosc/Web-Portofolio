@@ -80,10 +80,6 @@ body {
   color: #3184e9;         /* Altera a cor do texto quando o mouse passa por cima */
   transform: scale(1.05); /* Aumenta levemente o tamanho do elemento */
 }
-
-
-
-
 .logo-social-container {
   display: flex;
   align-items: center; /* Mantém tudo alinhado na mesma linha */
@@ -130,14 +126,6 @@ body {
 .social-link-nav a:nth-child(2) { 
   margin-top: 5px; /* Ajuste conforme necessário */
 }
-
-
-
-
-
-
-
-
 
 .nav_text {
   font-weight: 700 !important;
@@ -556,7 +544,7 @@ body {
   100% { background-position: 100% 50%; }
 }
 
-
+/* ALL WEB MOBILE */
 .button_projects button {
   padding: 12px 24px;
   border-radius: 30px;

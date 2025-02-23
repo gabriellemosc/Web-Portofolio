@@ -10,6 +10,7 @@ const projectsData = [
     title: "React Terminal Portfolio Website",
     description: "A Portfolio Terminal built with Javascript that tells a little more about me",
     image: "/images/projects/portfolio_home.png",
+    previewImage: "/images/projects/preview_portfolio.png", // Imagem de preview personalizada
     tag: ["All", "Web"],
     gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
     previewUrl: "https://gabriellemosc.github.io/Porfolio-Terminal/",
@@ -26,65 +27,74 @@ const projectsData = [
   {
     id: 3,
     title: "E-commerce Application",
-    description: "Project 3 description",
-    image: "/images/projects/3.png",
+    description: 'A e-commerce inspire by a Brazilian web store called "Reserva" ',
+    image: "/images/projects/reserva_project.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/gabriellemosc/Ecommerce_Project",
     previewUrl: "/",
   },
   {
     id: 4,
     title: "Food Ordering Application",
     description: "Project 4 description",
-    image: "/images/projects/4.png",
+    image: "/images/projects/netflix_project.png",
     tag: ["All", "Mobile"],
     gitUrl: "/",
     previewUrl: "/",
   },
   {
     id: 5,
-    title: "React Firebase Template",
+    title: "React Firebaseee Template",
     description: "Authentication and CRUD operations",
-    image: "/images/projects/5.png",
+    image: "/images/projects/flappybird_project.webp",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "/images/projects/flappybird_project.webp",
     previewUrl: "/",
   },
   {
     id: 6,
     title: "Full-stack Roadmap",
     description: "Project 5 description",
-    image: "/images/projects/6.png",
+    image: "/images/projects/app_kivy.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/gabriellemosc/App-de-Vendas-",
     previewUrl: "/",
   },
 ];
 
-  const ProjectItem = ({ project, index }) => {
-    const itemRef = useRef(null);
-    const itemInView = useInView(itemRef, { amount: 0.3 });
+const ProjectItem = ({ project, index }) => {
+  const itemRef = useRef(null);
+  const itemInView = useInView(itemRef, { amount: 0.3 });
+  const [isHovered, setIsHovered] = useState(false);
 
-    return (
-      <motion.li
-        ref={itemRef}
-        initial={{ y: 50, opacity: 0 }}
-        animate={itemInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
-        transition={{ duration: 0.3, delay: index * 0.2 }}
-      >
-        <ProjectCard
-          title={project.title}
-          description={project.description}
-          imgUrl={project.image}
-          gitUrl={project.gitUrl}
-          previewUrl={project.previewUrl}
-          className="project-image"
-          descriptionClass="project-description" // Agora a classe CSS será aplicada!
-
-        />
-      </motion.li>  
-    );
-  };
+  return (
+    <motion.li
+      ref={itemRef}
+      initial={{ y: 50, opacity: 0 }}
+      animate={itemInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+      transition={{ duration: 0.3, delay: index * 0.2 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative"
+    >
+      <ProjectCard
+        title={project.title}
+        description={project.description}
+        imgUrl={project.image}
+        previewImg={project.previewImage} // Passando a nova imagem para preview
+        gitUrl={project.gitUrl}
+        previewUrl={project.previewUrl}
+        className="project-image"
+        descriptionClass="project-description"
+      />
+      {isHovered && (
+        <div className="preview-box">
+          <img src={project.image} alt={project.title} />
+        </div>
+      )}
+    </motion.li>
+  );
+};
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
