@@ -82,22 +82,61 @@ body {
 }
 
 
+
+
+.logo-social-container {
+  display: flex;
+  align-items: center; /* Mantém tudo alinhado na mesma linha */
+  gap: 15px; /* Espaço entre o logo e os ícones sociais */
+  margin-left: -95px !important; /* Move tudo para a esquerda */
+}
+
+.social-link-nav {
+  display: flex;
+  gap: 8px; /* Espaçamento entre os ícones sociais */
+  align-items: center;
+  margin-left: 0; /* Garante que fique na extrema esquerda */
+}
+
+.social-link-nav a img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efeito de hover aplicado apenas  aos ícones sociais */
+.social-link-nav a:hover img {
+  transform: scale(1.3); /* Aumenta o ícone em 30% */
+  filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.2)); /* Sombra suave */
+  opacity: 0.9; /* Leve transparência para efeito mais suave */
+}
+
+/* Logo */
 .logo-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1px; /* Espaçamento interno */
-  background-color: #eaedf1; /* Cor de fundo (azul escuro) */
-  border: 2px solid #0a0a0a; /* Borda de cor cinza-azulada */
-  border-radius: 20px; /* Bordas arredondadas */
-  transition: all 0.3s ease-in-out;
+  padding: 1px;
+  background-color: #abacad;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  transition: background-color 0.7s ease, border-color 0.7s ease; /* Adiciona transição suave */
 }
 
-
+/* Hover removido, mas a cor de fundo muda suavemente */
 .logo-link:hover {
-  transform: scale(1.04 ); /* Efeito de leve zoom */
-  background-color: #5fc5e4; /* Fundo um pouco mais claro ao passar o mouse */
+  background-color: #3e3f3f; /* Cor original de fundo */
+  border-color: #0a0a0a; /* Mantém a borda como está, pode mudar se desejar */
 }
+
+.social-link-nav a:nth-child(2) { 
+  margin-top: 5px; /* Ajuste conforme necessário */
+}
+
+
+
+
+
+
+
 
 
 .nav_text {

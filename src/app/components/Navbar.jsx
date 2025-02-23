@@ -39,9 +39,36 @@ const Navbar = () => {
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-      <Link href="/"  className="logo-link">
-         <Image src="/images/logo.png" alt="Logo"  width={75} height={30}/>
-          </Link>
+
+   
+
+           {/* Ícones de redes sociais */}
+      {/* Container para logo + ícones sociais */}
+<div className="logo-social-container">
+
+
+  <div className="social-link-nav">
+    <Link href="https://www.linkedin.com" target="_blank">
+      <Image src="in.svg" alt="LinkedIn" width={20} height={30} />
+    </Link>
+
+    <Link href="https://www.linkedin.com/in/seu_perfil" target="_blank">
+      <Image src="instagram.svg" alt="Instagram" width={20} height={30} />
+    </Link>
+
+    <Link href="https://github.com/seu_usuario" target="_blank">
+      <Image src="github.svg" alt="GitHub" width={20} height={24} />
+    </Link>
+
+    <Link href="/" className="logo-link">
+    <Image src="/images/logo.png" alt="Logo" width={60} height={30} />
+  </Link>
+  </div>
+</div>
+
+
+
+
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button

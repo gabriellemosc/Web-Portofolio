@@ -7,21 +7,21 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
+    title: "React Terminal Portfolio Website",
     description: "A Portfolio Terminal built with Javascript that tells a little more about me",
-    image: "/images/projects/terminal_portfolio.png",
+    image: "/images/projects/portfolio_home.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
     previewUrl: "https://gabriellemosc.github.io/Porfolio-Terminal/",
   },
   {
     id: 2,
-    title: "Photography Portfolio Website",
-    description: "Project 2 description",
-    image: "/images/projects/2.png",
+    title: "React Terminal Portfolio Website",
+    description: "A Portfolio Terminal built with Javascript that tells a little more about me",
+    image: "/images/projects/terminal_portfolio.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
+    previewUrl: "https://gabriellemosc.github.io/Porfolio-Terminal/",
   },
   {
     id: 3,
