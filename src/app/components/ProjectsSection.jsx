@@ -10,7 +10,6 @@ const projectsData = [
     title: "React Terminal Portfolio Website",
     description: "A Portfolio Terminal built with Javascript that tells a little more about me",
     image: "/images/projects/portfolio_home.png",
-    previewImage: "/images/projects/preview_portfolio.png", // Imagem de preview personalizada
     tag: ["All", "Web"],
     gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
     previewUrl: "https://gabriellemosc.github.io/Porfolio-Terminal/",
@@ -20,6 +19,7 @@ const projectsData = [
     title: "React Terminal Portfolio Website",
     description: "A Portfolio Terminal built with Javascript that tells a little more about me",
     image: "/images/projects/terminal_portfolio.png",
+    previewImage: "/images/projects/Code_Git/code_terminal.png", // Imagem de preview personalizada
     tag: ["All", "Web"],
     gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
     previewUrl: "https://gabriellemosc.github.io/Porfolio-Terminal/",
@@ -29,33 +29,37 @@ const projectsData = [
     title: "E-commerce Application",
     description: 'A e-commerce inspire by a Brazilian web store called "Reserva" ',
     image: "/images/projects/reserva_project.png",
+    previewImage: "/images/projects/Code_Git/reserva_project.png", // Imagem de preview personalizada
     tag: ["All", "Web"],
     gitUrl: "https://github.com/gabriellemosc/Ecommerce_Project",
     previewUrl: "/",
   },
   {
     id: 4,
-    title: "Food Ordering Application",
+    title: "Netflix Project",
     description: "Project 4 description",
     image: "/images/projects/netflix_project.png",
+    previewImage: "/images/projects/Code_Git/netflix_project.png", // Imagem de preview personalizada
     tag: ["All", "Mobile"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/gabriellemosc/Netflix_Copy",
     previewUrl: "/",
   },
   {
     id: 5,
-    title: "React Firebaseee Template",
+    title: "Flappy Bird Project",
     description: "Authentication and CRUD operations",
     image: "/images/projects/flappybird_project.webp",
+    previewImage: "/images/projects/Code_Git/flappy_project.png", // Imagem de preview personalizada
     tag: ["All", "Web"],
-    gitUrl: "/images/projects/flappybird_project.webp",
+    gitUrl: "https://github.com/gabriellemosc/Flappy-Bird",
     previewUrl: "/",
   },
   {
     id: 6,
-    title: "Full-stack Roadmap",
+    title: "Appy Kivy",
     description: "Project 5 description",
     image: "/images/projects/app_kivy.png",
+    previewImage: "/images/projects/Code_Git/app_kivy.png", // Imagem de preview personalizada
     tag: ["All", "Web"],
     gitUrl: "https://github.com/gabriellemosc/App-de-Vendas-",
     previewUrl: "/",

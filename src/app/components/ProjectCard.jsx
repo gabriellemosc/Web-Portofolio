@@ -31,7 +31,7 @@ const ProjectCard = ({ imgUrl, previewImg, title, description, gitUrl, previewUr
               </div>
             )}
           </Link>
-
+            
           {/* Ícone de Preview */}
           <Link
             href={previewUrl}
