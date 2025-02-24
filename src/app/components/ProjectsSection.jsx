@@ -12,7 +12,7 @@ const projectsData = [
     image: "/images/projects/portfolio_home.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
-    previewUrl: "https://gabriellemosc.github.io/Porfolio-Terminal/",
+    previewUrl: "/",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const projectsData = [
     previewImage: "/images/projects/Code_Git/reserva_project.png", // Imagem de preview personalizada
     tag: ["All", "Web"],
     gitUrl: "https://github.com/gabriellemosc/Ecommerce_Project",
-    previewUrl: "/",
+    previewUrl: null,
   },
   {
     id: 4,
@@ -40,9 +40,9 @@ const projectsData = [
     description: "Project 4 description",
     image: "/images/projects/netflix_project.png",
     previewImage: "/images/projects/Code_Git/netflix_project.png", // Imagem de preview personalizada
-    tag: ["All", "Mobile"],
+    tag: ["All", "Web"],
     gitUrl: "https://github.com/gabriellemosc/Netflix_Copy",
-    previewUrl: "/",
+    previewUrl: null,
   },
   {
     id: 5,
@@ -50,19 +50,19 @@ const projectsData = [
     description: "Authentication and CRUD operations",
     image: "/images/projects/flappybird_project.webp",
     previewImage: "/images/projects/Code_Git/flappy_project.png", // Imagem de preview personalizada
-    tag: ["All", "Web"],
+    tag: ["All", "Mobile"],
     gitUrl: "https://github.com/gabriellemosc/Flappy-Bird",
-    previewUrl: "/",
+    previewUrl: null,
   },
   {
     id: 6,
     title: "Appy Kivy",
     description: "Project 5 description",
     image: "/images/projects/app_kivy.png",
-    previewImage: "/images/projects/Code_Git/app_kivy.png", // Imagem de preview personalizada
-    tag: ["All", "Web"],
+    previewImage: "/images/projects/Code_Git/app_kivy.png",
+    tag: ["All", "Mobile"],
     gitUrl: "https://github.com/gabriellemosc/App-de-Vendas-",
-    previewUrl: "/",
+    previewUrl: null, // <- Definido como null
   },
 ];
 
