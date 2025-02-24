@@ -10,20 +10,22 @@ const projectsData = [
     title: "React Terminal Portfolio Website",
     description: "A Portfolio Terminal built with Javascript that tells a little more about me",
     image: "/images/projects/portfolio_home.png",
+    previewImgEye:"/images/projects/portfolio_url_pre.png", // Preview do EyeIcon
     tag: ["All", "Web"],
     gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
     previewUrl: "/",
   },
   {
-    id: 2,
-    title: "React Terminal Portfolio Website",
-    description: "A Portfolio Terminal built with Javascript that tells a little more about me",
-    image: "/images/projects/terminal_portfolio.png",
-    previewImage: "/images/projects/Code_Git/code_terminal.png", // Imagem de preview personalizada
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
-    previewUrl: "https://gabriellemosc.github.io/Porfolio-Terminal/",
-  },
+      id: 2,
+      title: "React Terminal Portfolio Website",
+      description: "A Portfolio Terminal built with Javascript that tells a little more about me",
+      image: "/images/projects/terminal_portfolio.png",
+      previewImage: "/images/projects/Code_Git/code_terminal.png", // Imagem de preview personalizada
+      previewImgEye:"/images/projects/terminal_pre_url.png", // Preview do EyeIcon
+      tag: ["All", "Web"],
+      gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
+      previewUrl: "https://gabriellemosc.github.io/Porfolio-Terminal/",
+    },
   {
     id: 3,
     title: "E-commerce Application",
@@ -70,6 +72,8 @@ const ProjectItem = ({ project, index }) => {
   const itemRef = useRef(null);
   const itemInView = useInView(itemRef, { amount: 0.3 });
   const [isHovered, setIsHovered] = useState(false);
+  const [isEyeHovered, setIsEyeHovered] = useState(false); // EyeIcon
+
 
   return (
     <motion.li
@@ -81,24 +85,37 @@ const ProjectItem = ({ project, index }) => {
       onMouseLeave={() => setIsHovered(false)}
       className="relative"
     >
-      <ProjectCard
+        <ProjectCard
         title={project.title}
         description={project.description}
         imgUrl={project.image}
-        previewImg={project.previewImage} // Passando a nova imagem para preview
+        previewImg={project.previewImage} // Preview do CodeBracketIcon
+        previewImgEye={project.previewImgEye} // Preview do EyeIcon
         gitUrl={project.gitUrl}
         previewUrl={project.previewUrl}
         className="project-image"
         descriptionClass="project-description"
+        setIsHovered={setIsHovered} // Passa função para controlar hover do CodeBracketIcon
+        setIsEyeHovered={setIsEyeHovered} // ✅ Passa função para o EyeIcon
       />
+
+      {/* Exibir preview quando o CodeBracketIcon estiver hoverizado */}
       {isHovered && (
         <div className="preview-box">
-          <img src={project.image} alt={project.title} />
+          <img src={project.previewImage || project.image} alt={project.title} />
+        </div>
+      )}
+
+      {/* Exibir preview quando o EyeIcon estiver hoverizado */}
+      {isEyeHovered && (
+        <div className="preview-box">
+          <img src={project.previewImgEye || project.image} alt={project.title} />
         </div>
       )}
     </motion.li>
   );
 };
+
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
