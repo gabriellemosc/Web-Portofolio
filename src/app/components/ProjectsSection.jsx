@@ -7,8 +7,8 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Terminal Portfolio Website",
-    description: "A Portfolio Terminal built with Javascript that tells a little more about me",
+    title: "Portfolio Website",
+    description: "My Personal Portfolio where I show my projects, resume, professional contacts and a little about myself and my skills.",
     image: "/images/projects/portfolio_home.png",
     previewImgEye:"/images/projects/portfolio_url_pre.png", // Preview do EyeIcon
     tag: ["All", "Web"],
@@ -17,29 +17,31 @@ const projectsData = [
   },
   {
       id: 2,
-      title: "React Terminal Portfolio Website",
-      description: "A Portfolio Terminal built with Javascript that tells a little more about me",
-      image: "/images/projects/terminal_portfolio.png",
-      previewImage: "/images/projects/Code_Git/code_terminal.png", // Imagem de preview personalizada
-      previewImgEye:"/images/projects/terminal_pre_url.png", // Preview do EyeIcon
+      title: "E-commerce Project",
+      description: 'An e-commerce inspired by a Brazilian web store called "Reserva", with payment and login system',
+      image: "/images/projects/reserva_project.png",
+      previewImage: "/images/projects/Code_Git/reserva_project.png", // Imagem de preview personalizada
       tag: ["All", "Web"],
-      gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
-      previewUrl: "https://gabriellemosc.github.io/Porfolio-Terminal/",
+      gitUrl: "https://github.com/gabriellemosc/Ecommerce_Project",
+      previewUrl: null,
     },
+
+
   {
     id: 3,
-    title: "E-commerce Application",
-    description: 'A e-commerce inspire by a Brazilian web store called "Reserva" ',
-    image: "/images/projects/reserva_project.png",
-    previewImage: "/images/projects/Code_Git/reserva_project.png", // Imagem de preview personalizada
+    title: "Terminal Portfolio",
+    description: "A Portfolio Terminal made with JavaScript, where I tell a little more about myself and my interests",
+    image: "/images/projects/terminal_portfolio.png",
+    previewImage: "/images/projects/Code_Git/code_terminal.png", // Imagem de preview personalizada
+    previewImgEye:"/images/projects/terminal_pre_url.png", // Preview do EyeIcon
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/gabriellemosc/Ecommerce_Project",
-    previewUrl: null,
+    gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
+    previewUrl: "https://gabriellemosc.github.io/Porfolio-Terminal/",
   },
   {
     id: 4,
     title: "Netflix Project",
-    description: "Project 4 description",
+    description: "A website made with Django, with an interface inspired by Netflix, with a recommendation system and management of films and TV series.",
     image: "/images/projects/netflix_project.png",
     previewImage: "/images/projects/Code_Git/netflix_project.png", // Imagem de preview personalizada
     tag: ["All", "Web"],
@@ -48,8 +50,8 @@ const projectsData = [
   },
   {
     id: 5,
-    title: "Flappy Bird Project",
-    description: "Authentication and CRUD operations",
+    title: "Flappy Bird Game",
+    description: "The classic FlappyBird game, made with Python, using the Pygames library",
     image: "/images/projects/flappybird_project.webp",
     previewImage: "/images/projects/Code_Git/flappy_project.png", // Imagem de preview personalizada
     tag: ["All", "Mobile"],
@@ -58,8 +60,8 @@ const projectsData = [
   },
   {
     id: 6,
-    title: "Appy Kivy",
-    description: "Project 5 description",
+    title: "Sales App",
+    description: "Sales management system, seller tracking, user profile customization and API integration using Firebase DB",
     image: "/images/projects/app_kivy.png",
     previewImage: "/images/projects/Code_Git/app_kivy.png",
     tag: ["All", "Mobile"],
