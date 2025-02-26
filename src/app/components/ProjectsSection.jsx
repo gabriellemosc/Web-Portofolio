@@ -18,7 +18,7 @@ const projectsData = [
   {
       id: 2,
       title: "E-commerce Project",
-      description: 'An e-commerce inspired by a Brazilian web store called "Reserva", with payment and login system',
+      description: 'An e-commerce inspired by a Brazilian web store called "Reserva", with payment and login system.',
       image: "/images/projects/reserva_project.png",
       previewImage: "/images/projects/Code_Git/reserva_project.png", // Imagem de preview personalizada
       tag: ["All", "Web"],
@@ -30,7 +30,7 @@ const projectsData = [
   {
     id: 3,
     title: "Terminal Portfolio",
-    description: "A Portfolio Terminal made with JavaScript, where I tell a little more about myself and my interests",
+    description: "A Portfolio Terminal made with JavaScript, where I tell a little more about myself and my interests.",
     image: "/images/projects/terminal_portfolio.png",
     previewImage: "/images/projects/Code_Git/code_terminal.png", // Imagem de preview personalizada
     previewImgEye:"/images/projects/terminal_pre_url.png", // Preview do EyeIcon
@@ -51,7 +51,7 @@ const projectsData = [
   {
     id: 5,
     title: "Flappy Bird Game",
-    description: "The classic FlappyBird game, made with Python, using the Pygames library",
+    description: "The classic FlappyBird game, recreated in Python using the Pygame library, featuring smooth physics and engaging gameplay.",
     image: "/images/projects/flappybird_project.webp",
     previewImage: "/images/projects/Code_Git/flappy_project.png", // Imagem de preview personalizada
     tag: ["All", "Mobile"],
@@ -61,7 +61,7 @@ const projectsData = [
   {
     id: 6,
     title: "Sales App",
-    description: "Sales management system, seller tracking, user profile customization and API integration using Firebase DB",
+    description: "Sales management system, seller tracking, user profile customization and API integration using Firebase DB.",
     image: "/images/projects/app_kivy.png",
     previewImage: "/images/projects/Code_Git/app_kivy.png",
     tag: ["All", "Mobile"],

@@ -4,39 +4,45 @@ import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
+import emailjs from "emailjs-com";  // Adicionando a importação do EmailJS
+
+
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Dados que serão enviados para o template
     const data = {
       email: e.target.email.value,
       subject: e.target.subject.value,
       message: e.target.message.value,
     };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
+    // Usando o EmailJS para enviar o email
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, 
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, 
+        {
+          from_name: data.email,  
+          subject: data.subject,  
+          message: data.message,  
+          to_name: "Gabriel",  
+        },
 
-    // Form the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
-      method: "POST",
-      // Tell the server we're sending JSON.
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    };
-
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
-
-    if (response.status === 200) {
-      console.log("Message sent.");
-      setEmailSubmitted(true);
-    }
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY 
+      )
+      .then(
+        (response) => {
+          console.log("Message sent successfully", response);
+          setEmailSubmitted(true); // Exibir mensagem de sucesso
+        },
+        (error) => {
+          console.error("Failed to send message", error);
+        }
+      );
   };
 
   return (
@@ -84,7 +90,7 @@ const EmailSection = () => {
                 id="email"
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="jacob@google.com"
+                placeholder="joao@gmail.com"
               />
             </div>
             <div className="mb-6">
