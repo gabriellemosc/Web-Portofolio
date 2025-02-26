@@ -593,7 +593,53 @@ body {
   top: -20px; /* Ajuste conforme necessário */  
   margin-left: -8px;
 }
-  
+
+
+
+.lets-connect {
+  font-weight: 900;
+  font-size: 30px;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #bbb4b4, #0278ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.4), 
+               0 0 6px rgba(255, 255, 255, 0.3), 
+               0 0 9px rgba(255, 255, 255, 0.2); /* Sombras mais sutis */
+  transition: all 0.4s ease;
+  animation: glowing 2s infinite ease-in-out alternate; /* Animação mais lenta */
+}
+
+@keyframes glowing {
+  0% {
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.4), 
+                 0 0 6px rgba(255, 255, 255, 0.3), 
+                 0 0 9px rgba(255, 255, 255, 0.2); /* Sombras suaves */
+  }
+  50% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 
+                 0 0 10px rgba(255, 255, 255, 0.5), 
+                 0 0 15px rgba(255, 255, 255, 0.4); /* Brilho mais suave no meio */
+  }
+  100% {
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.4), 
+                 0 0 6px rgba(255, 255, 255, 0.3), 
+                 0 0 9px rgba(255, 255, 255, 0.2); /* Volta ao brilho suave */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
