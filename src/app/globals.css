@@ -657,11 +657,10 @@ body {
 .span-text-email-section {
   font-weight: 900 !important;
   color: #ffffff;
-  background: linear-gradient(45deg, #00d4ff, #007bff); /* Gradiente sutil para destaque */
+  background: linear-gradient(45deg, #00d5ff, #007bff); /* Gradiente sutil para destaque */
   -webkit-background-clip: text;
   color: transparent;
   text-shadow: none;
-  transition: all 0.3s ease-in-out;
 }
 
 

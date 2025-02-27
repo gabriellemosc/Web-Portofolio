@@ -92,17 +92,18 @@ const EmailSection = () => {
         <div className="z-10">
           <h5 className="text-xl font-bold text-white my-2 lets-connect">Let&apos;s Connect</h5>
           <p className="text-[#ADB7BE] mb-4 max-w-md text-email-section">
-  <span className="span-text-email-section">Let's Talk.</span> I'm always open to new connections! Whether it's for career opportunities or a tech discussion, feel free to reach out. If you’re interested and enjoyed my work, I’d love to chat!
+  <span className="span-text-email-section">Let's Talk.</span> I'm always open to new connections, whether it's for career opportunities or a tech discussion, feel free to reach out. If you’re interested and liked it, I'd like to have an opportunity to chat!
 </p>
 
-          <div className="socials flex flex-row gap-2">
-            <Link href="https://github.com">
-              <Image src={GithubIcon} alt="Github Icon" />
-            </Link>
-            <Link href="https://linkedin.com">
-              <Image src={LinkedinIcon} alt="Linkedin Icon" />
-            </Link>
-          </div>
+      <div className="socials flex flex-row gap-2">
+        <Link href="https://github.com/gabriellemosc" target="_blank" rel="noopener noreferrer">
+          <Image src={GithubIcon} alt="Github Icon" />
+        </Link>
+        <Link href="https://www.linkedin.com/in/gabriel-lemos-cerqueira/" target="_blank" rel="noopener noreferrer">
+          <Image src={LinkedinIcon} alt="Linkedin Icon" />
+        </Link>
+      </div>
+
         </div>
       </motion.div>
 
