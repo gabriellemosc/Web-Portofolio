@@ -25,38 +25,34 @@ const AboutSection = () => {
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [isTopicsVisible, setIsTopicsVisible] = useState(false);
   const [isIconsVisible, setIsIconsVisible] = useState(false);
-  const [isCertificationsVisible, setIsCertificationsVisible] = useState(false);  //certicicado
+  const [isCertificationsVisible, setIsCertificationsVisible] = useState(false);
 
   const titleRef = useRef(null);
   const textRef = useRef(null);
   const topicsRef = useRef(null);
   const iconsRef = useRef(null);
-  const certificationsRef = useRef(null);  //certificado
-
+  const certificationsRef = useRef(null);
 
   const handleTabChange = (id) => {
     setTab(id);
   };
 
-  // Hook customizado para usar o IntersectionObserver
- // Hook customizado para usar o IntersectionObserver
-const useIntersectionObserver = (ref, setState) => {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setState(entry.isIntersecting); // Altera o estado quando o elemento entra ou sai da tela
-      },
-      { threshold: 0.5 } // Considera o elemento como visível quando 50% dele entra na tela
-    );
+  const useIntersectionObserver = (ref, setState) => {
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setState(entry.isIntersecting);
+        },
+        { threshold: 0.5 }
+      );
 
-    if (ref.current) observer.observe(ref.current); // Observa o elemento
+      if (ref.current) observer.observe(ref.current);
 
-    return () => {
-      if (ref.current) observer.unobserve(ref.current); // Limpa o observador ao desmontar o componente
-    };
-  }, [ref, setState]);
-};
-
+      return () => {
+        if (ref.current) observer.unobserve(ref.current);
+      };
+    }, [ref, setState]);
+  };
 
   useIntersectionObserver(titleRef, setIsTitleVisible);
   useIntersectionObserver(textRef, setIsTextVisible);
@@ -64,10 +60,8 @@ const useIntersectionObserver = (ref, setState) => {
   useIntersectionObserver(iconsRef, setIsIconsVisible);
   useIntersectionObserver(certificationsRef, setIsCertificationsVisible);
 
-
-  // Conteúdo dos ícones (aba Skills)
   const skillsContent = (
-    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 mt-6">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-6">
       {TOOL_ICONS.map((tool, index) => (
         <div
           key={tool.name}
@@ -80,14 +74,13 @@ const useIntersectionObserver = (ref, setState) => {
             <div className="icon-container">
               <Image src={tool.src} alt={tool.name} width={50} height={50} className="icon" />
             </div>
-            <span className="tool-name">{tool.name}</span> {/* Nome do ícone */}
+            <span className="tool-name">{tool.name}</span>
           </div>
         </div>
       ))}
     </div>
   );
 
-  // Dados das abas
   const TAB_DATA = [
     {
       title: "Skills",
@@ -99,33 +92,30 @@ const useIntersectionObserver = (ref, setState) => {
       id: "education",
       content: (
         <div
-        ref={textRef}
-        className={`text-base lg:text-lg about_text ${isTextVisible ? "animate-visible" : ""}`}
+          ref={textRef}
+          className={`text-base sm:text-lg about_text ${isTextVisible ? "animate-visible" : ""}`}
         >
-        <ul className="list-disc pl-2 education relative">
-        <li>University Santo Andre, Sao Paulo</li>
-        <span className="education-subtitle relative inline-block group">
-          <a
-            href="https://www.fsa.br/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-3 py-1 bg-black text-cyan-400 font-bold rounded-md transition-all duration-300 transform hover:scale-105 hover:bg-gray-800"
-          >
-            Foundation Santo Andre
-          </a>
-          {/* Pré-visualização com imagem */}
-          <div className="preview-box absolute left-1/2 transform -translate-x-1/2 bottom-full w-64 h-40 bg-white border border-gray-300 rounded-md shadow-lg hidden group-hover:block z-50">
-            <img
-              src="fsa_site.png" 
-              alt="FSA Site"
-              className="w-full h-full object-cover rounded-md"
-            />
-          </div>
-        </span>
-      </ul>
-      </div>
-      
-      
+          <ul className="list-disc pl-2 education relative">
+            <li>University Santo Andre, Sao Paulo</li>
+            <span className="education-subtitle relative inline-block group">
+              <a
+                href="https://www.fsa.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-3 py-1 bg-black text-cyan-400 font-bold rounded-md transition-all duration-300 transform hover:scale-105 hover:bg-gray-800"
+              >
+                Foundation Santo Andre
+              </a>
+              <div className="preview-box absolute left-1/2 transform -translate-x-1/2 bottom-full w-64 h-40 bg-white border border-gray-300 rounded-md shadow-lg hidden group-hover:block z-50">
+                <img
+                  src="fsa_site.png"
+                  alt="FSA Site"
+                  className="w-full h-full object-cover rounded-md"
+                />
+              </div>
+            </span>
+          </ul>
+        </div>
       ),
     },
     {
@@ -133,38 +123,36 @@ const useIntersectionObserver = (ref, setState) => {
       id: "certifications",
       content: (
         <div
-        ref={textRef}
-        className={`text-base lg:text-lg about_text ${isTextVisible ? "animate-visible" : ""}`}
+          ref={textRef}
+          className={`text-base sm:text-lg about_text ${isTextVisible ? "animate-visible" : ""}`}
         >
-        <ul className="list-disc pl-2 certificacoes">
-          <li>AWS Impressionador - Hashtag Treinamentos</li>
-          <li>Python Impressionador - Hashtag Treinamentos</li>
-          <li>SQL - Hashtag Treinamentos</li>
-          <li>Advanced Linux - Estudonauta</li>
-        </ul>
-      </div>
-      
-      
+          <ul className="list-disc pl-2 certificacoes">
+            <li>AWS Impressionador - Hashtag Treinamentos</li>
+            <li>Python Impressionador - Hashtag Treinamentos</li>
+            <li>SQL - Hashtag Treinamentos</li>
+            <li>Advanced Linux - Estudonauta</li>
+          </ul>
+        </div>
       ),
     },
   ];
 
   return (
     <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 ">
         <Image
           src="/images/about-image.png"
           width={500}
           height={500}
           className={`about-image ${isTitleVisible ? "animate-visible" : ""}`}
         />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+        <div className="mt-4 sm:mt-0 text-left flex flex-col h-full">
           <h2 ref={titleRef} className={`about ${isTitleVisible ? "animate-visible" : ""}`}>
             About Me
           </h2>
           <div
             ref={textRef}
-            className={`text-base lg:text-lg about_text ${isTextVisible ? "animate-visible" : ""}`}
+            className={`text-base sm:text-lg about_text ${isTextVisible ? "animate-visible" : ""}`}
           >
             <p className="about_p">
               I am a <strong>backend developer</strong> from <i>Sao Paulo, Brazil</i>, passionate about{" "}

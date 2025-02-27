@@ -76,6 +76,15 @@ const ProjectItem = ({ project, index }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isEyeHovered, setIsEyeHovered] = useState(false); // EyeIcon
 
+  const handleMouseEnter = (type) => {
+    if (type === "preview") setIsHovered(true);
+    if (type === "eye") setIsEyeHovered(true);
+  };
+
+  const handleMouseLeave = (type) => {
+    if (type === "preview") setIsHovered(false);
+    if (type === "eye") setIsEyeHovered(false);
+  };
 
   return (
     <motion.li
@@ -83,8 +92,6 @@ const ProjectItem = ({ project, index }) => {
       initial={{ y: 50, opacity: 0 }}
       animate={itemInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
       transition={{ duration: 0.3, delay: index * 0.2 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       className="relative"
     >
         <ProjectCard
@@ -97,19 +104,19 @@ const ProjectItem = ({ project, index }) => {
         previewUrl={project.previewUrl}
         className="project-image"
         descriptionClass="project-description"
-        setIsHovered={setIsHovered} // Passa função para controlar hover do CodeBracketIcon
-        setIsEyeHovered={setIsEyeHovered} // ✅ Passa função para o EyeIcon
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       />
 
       {/* Exibir preview quando o CodeBracketIcon estiver hoverizado */}
-      {isHovered && (
+      {isHovered && !isEyeHovered && (
         <div className="preview-box">
           <img src={project.previewImage || project.image} alt={project.title} />
         </div>
       )}
 
       {/* Exibir preview quando o EyeIcon estiver hoverizado */}
-      {isEyeHovered && (
+      {isEyeHovered && !isHovered && (
         <div className="preview-box">
           <img src={project.previewImgEye || project.image} alt={project.title} />
         </div>
@@ -117,7 +124,6 @@ const ProjectItem = ({ project, index }) => {
     </motion.li>
   );
 };
-
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");

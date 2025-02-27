@@ -137,35 +137,61 @@ body {
   margin-top: 5px; /* Ajuste conforme necessário */
 }
 
-.nav_text {
-  font-weight: 700 !important;
-  color: #63faff;
-  font-size: 23px !important;
+
+
+
+
+
+/* Estilo inicial do texto */
+.text-effect {
+  font-weight: 400 !important;
+  font-size: 20px !important;
   position: relative;
-  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  transition: color 0.4s ease-in-out, transform 0.3s ease-in-out;
+  color: #8b8b8b;
 }
 
-.nav_text:hover {
-  color: #ffffff; /* Muda para branco ao passar o mouse */
+/* Efeito no hover do texto */
+.text-effect:hover {
+  color: #3ebdd3; /* Muda para a cor desejada ao passar o mouse */
   text-shadow: 0px 0px 10px rgba(131, 119, 119, 0.2); /* Efeito de brilho */
-  transform: scale(1.05); /* Aumenta um pouco o tamanho */
+  transform: scale(1.03); /* Aumenta um pouco o tamanho do texto */
 }
 
 /* Sublinhado animado */
-.nav_text::after {
+.text-effect::after {
   content: "";
   position: absolute;
-  left: 0;                                                                                                        
+  left: 0;
   bottom: -3px; /* Distância do sublinhado */
   width: 0;
   height: 2px; /* Espessura do sublinhado */
-  background-color: #ffffff; /* Cor do sublinhado */
+  background-color: #5cd1ff; /* Cor do sublinhado */
   transition: width 0.3s ease-in-out;
 }
 
-.nav_text:hover::after {
+.text-effect:hover::after {
   width: 100%; /* Faz o sublinhado crescer do início ao fim */
 }
+
+/* Efeito no ícone (imagem) ao passar o mouse sobre o item */
+.nav-item:hover .icon-effect-nav {
+  transform: scale(1.2); /* Aumenta o ícone em 20% */
+  transition: transform 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Efeito no texto e no ícone quando o item é hoverado */
+.nav-item:hover .text-effect {
+  color: #5cd1ff; /* Alteração de cor do texto */
+  text-shadow: 0px 0px 10px rgba(131, 119, 119, 0.2); /* Efeito de brilho no texto */
+  transform: scale(1.03); /* Aumento do texto */
+}
+
+
+
+
+
+
 
 .botoes_inicio {
   font-size: 1.2rem !important; /* Tamanho do texto */
