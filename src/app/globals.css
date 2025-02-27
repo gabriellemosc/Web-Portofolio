@@ -144,11 +144,11 @@ body {
 
 /* Estilo inicial do texto */
 .text-effect {
-  font-weight: 400 !important;
+  font-weight: 450 !important;
   font-size: 20px !important;
   position: relative;
   transition: color 0.4s ease-in-out, transform 0.3s ease-in-out;
-  color: #8b8b8b;
+  color: #ffffff;
 }
 
 /* Efeito no hover do texto */
@@ -171,7 +171,7 @@ body {
 }
 
 .text-effect:hover::after {
-  width: 100%; /* Faz o sublinhado crescer do início ao fim */
+  width: 110%; /* Faz o sublinhado crescer do início ao fim */
 }
 
 /* Efeito no ícone (imagem) ao passar o mouse sobre o item */

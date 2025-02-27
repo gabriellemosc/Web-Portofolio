@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import emailjs from "emailjs-com";
 
+
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -112,60 +113,55 @@ const EmailSection = () => {
         {emailSubmitted ? (
           <p className="text-green-500 text-sm mt-2">Email sent successfully!</p>
         ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
-            <div className="mb-6">
-              <label
-                htmlFor="email"
-                className="text-white block mb-2 text-sm font-medium"
-              >
-                Your email
-              </label>
-              <input
-                name="email"
-                type="email"
-                id="email"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="joao@gmail.com"
-              />
-            </div>
-            <div className="mb-6">
-              <label
-                htmlFor="subject"
-                className="text-white block text-sm mb-2 font-medium"
-              >
-                Subject
-              </label>
-              <input
-                name="subject"
-                type="text"
-                id="subject"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Just saying hi"
-              />
-            </div>
-            <div className="mb-6">
-              <label
-                htmlFor="message"
-                className="text-white block text-sm mb-2 font-medium"
-              >
-                Message
-              </label>
-              <textarea
-                name="message"
-                id="message"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Let's talk about..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
-            >
-              Send Message
-            </button>
-          </form>
+<form className="flex flex-col bg-gradient-to-br from-[#162238] to-[#1F2A3D] p-6 rounded-xl shadow-md space-y-4 border-2 border-[#2F3D52] hover:shadow-lg transition-all duration-400 transform hover:scale-102">
+  <div className="relative">
+    <label htmlFor="email" className="text-white text-sm font-semibold mb-2">Email</label>
+    <input
+      name="email"
+      type="email"
+      id="email"
+      required
+      className="bg-[#23314C] border border-[#2F3D52] text-white placeholder-gray-400 text-sm rounded-lg w-full p-4 transition-all focus:ring-2 focus:ring-primary-500 focus:outline-none hover:border-primary-500 shadow-sm"
+      placeholder="you@example.com"
+    />
+    <span className="absolute right-4 top-10 text-gray-400 text-lg">📧</span>
+  </div>
+  <div className="relative">
+    <label htmlFor="subject" className="text-white text-sm font-semibold mb-2">Subject</label>
+    <input
+      name="subject"
+      type="text"
+      id="subject"
+      required
+      className="bg-[#23314C] border border-[#2F3D52] text-white placeholder-gray-400 text-sm rounded-lg w-full p-4 transition-all focus:ring-2 focus:ring-primary-500 focus:outline-none hover:border-primary-500 shadow-sm"
+      placeholder="Enter your subject"
+    />
+    <span className="absolute right-4 top-10 text-gray-400 text-lg">📄</span>
+  </div>
+  <div className="relative">
+    <label htmlFor="message" className="text-white text-sm font-semibold mb-2">Message</label>
+    <textarea
+      name="message"
+      id="message"
+      rows="5"
+      className="bg-[#23314C] border border-[#2F3D52] text-white placeholder-gray-400 text-sm rounded-lg w-full p-4 transition-all focus:ring-2 focus:ring-primary-500 focus:outline-none hover:border-primary-500 shadow-sm"
+      placeholder="Your message here"
+    />
+    <span className="absolute right-4 top-10 text-gray-400 text-lg">💬</span>
+  </div>
+  <button
+    type="submit"
+    className="bg-gradient-to-r from-[#42C2FF] to-[#0A84FF] text-white font-bold py-4 px-8 rounded-lg w-full transition-all duration-300 shadow-md hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-3"
+  >
+    <span className="text-xl">🚀</span> Send
+  </button>
+</form>
+  
+
+
+
+
+
         )}
       </div>
     </section>
