@@ -52,6 +52,16 @@ body {
   overflow: auto;
 }
 
+.from-primary-400 {
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+.from-primary-900 {
+  --tw-gradient-from: #1e3a8a var(--tw-gradient-from-position) !important; /* Azul escuro */
+  --tw-gradient-to: rgb(30 58 138 / 0) var(--tw-gradient-to-position) !important; /* Transparente no mesmo tom */
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
 
 /* NAV BAR */
 .welcome_h1{
@@ -602,6 +612,7 @@ body {
   text-transform: uppercase;
   color: #00aaff; /* Azul-ciano */
   background: linear-gradient(45deg, #bbb4b4, #0278ff);
+  margin-bottom: 20px;
   -webkit-background-clip: text;
   color: transparent;
   text-shadow: 0 0 3px rgba(255, 255, 255, 0.4), 
@@ -626,14 +637,33 @@ body {
   }
 }
 
-
-
-
-
 .small-gradient {
   width: 250px; /* Diminui largura */
   height: 250px; /* Diminui altura */
 }
+
+.text-email-section {
+  font-weight: 500;
+  font-size: 16.5px;
+  letter-spacing: 0.5px;
+  line-height: 2.0;
+  color: #d4d4d4; /* Um tom suave para contraste sutil */
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.15); /* Brilho sutil para destacar */
+  border-left: 3px solid #00c6ff;
+  padding-left: 15px;
+}
+
+
+.span-text-email-section {
+  font-weight: 900 !important;
+  color: #ffffff;
+  background: linear-gradient(45deg, #00d4ff, #007bff); /* Gradiente sutil para destaque */
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  transition: all 0.3s ease-in-out;
+}
+
 
 
 
