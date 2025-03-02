@@ -62,6 +62,10 @@ body {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
 }
 
+.bg-\[\#121212\] {
+  --tw-bg-opacity: 0.4;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
 
 /* NAV BAR */
 .welcome_h1{

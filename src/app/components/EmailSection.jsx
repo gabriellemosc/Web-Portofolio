@@ -7,7 +7,6 @@ import Link from "next/link";
 import Image from "next/image";
 import emailjs from "emailjs-com";
 
-
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -78,7 +77,6 @@ const EmailSection = () => {
       );
   };
 
-
   return (
     <section
       id="contact"
@@ -99,18 +97,17 @@ const EmailSection = () => {
         <div className="z-10">
           <h5 className="text-xl font-bold text-white my-2 lets-connect">Let&apos;s Connect</h5>
           <p className="text-[#ADB7BE] mb-4 max-w-md text-email-section">
-  <span className="span-text-email-section">Let's Talk.</span> I'm always open to new connections, whether it's for career opportunities or a tech discussion, feel free to reach out. If you’re interested and liked it, I'd like to have an opportunity to chat!
-</p>
+            <span className="span-text-email-section">Let's Talk.</span> I'm always open to new connections, whether it's for career opportunities or a tech discussion, feel free to reach out. If you’re interested and liked it, I'd like to have an opportunity to chat!
+          </p>
 
-      <div className="socials flex flex-row gap-2">
-        <Link href="https://github.com/gabriellemosc" target="_blank" rel="noopener noreferrer">
-          <Image src={GithubIcon} alt="Github Icon" />
-        </Link>
-        <Link href="https://www.linkedin.com/in/gabriel-lemos-cerqueira/" target="_blank" rel="noopener noreferrer">
-          <Image src={LinkedinIcon} alt="Linkedin Icon" />
-        </Link>
-      </div>
-
+          <div className="socials flex flex-row gap-2">
+            <Link href="https://github.com/gabriellemosc" target="_blank" rel="noopener noreferrer">
+              <Image src={GithubIcon} alt="Github Icon" />
+            </Link>
+            <Link href="https://www.linkedin.com/in/gabriel-lemos-cerqueira/" target="_blank" rel="noopener noreferrer">
+              <Image src={LinkedinIcon} alt="Linkedin Icon" />
+            </Link>
+          </div>
         </div>
       </motion.div>
 
@@ -119,72 +116,59 @@ const EmailSection = () => {
         {emailSubmitted ? (
           <p className="text-green-500 text-sm mt-2">Email sent successfully!</p>
         ) : (
+          <motion.form
+            onSubmit={handleSubmit}
+            initial={{ translateX: "100%", opacity: 1 }} // Começa fora da tela (100% da largura)
+            animate={isVisible ? { translateX: "0%", opacity: 1 } : { translateX: "20%", opacity: 1 }} 
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="flex flex-col bg-[#030B17] p-10 rounded-xl shadow-2xl space-y-6 border-2 border-[#0A1A2F] hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.01]"
+            style={{ clipPath: "inset(0px 0px 0px 0px)" }} // Garante que não haja overflow lateral
+          >
+            <h2 className="text-white text-2xl font-extrabold text-center uppercase tracking-wide drop-shadow-lg">
+              Get In Touch
+            </h2>
 
-          
+            <div className="relative box-email">
+              <label htmlFor="email" className="text-white text-sm font-medium mb-2 font-sans label-custom">
+                Email Address
+              </label>
+              <input name="email" type="email" id="email" required className="input-custom-shadow" placeholder="your.email@example.com" />
+              <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">
+                <img src="/email.svg" alt="Email Icon" className="w-6 h-6" />
+              </span>
+            </div>
 
-<form  onSubmit={handleSubmit}  className="flex flex-col bg-[#030B17] p-10 rounded-xl shadow-2xl space-y-6 border-2 border-[#0A1A2F] hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.01]">
-<h2 className="text-white text-2xl font-extrabold text-center uppercase tracking-wide drop-shadow-lg title-table">Get In Touch</h2>
-  <div className="relative box-email">
-    <label htmlFor="email"
-     className="text-white text-sm font-medium mb-2 font-sans label-custom"
-    >
-      Email Address</label>
-      <input
-  name="email"
-  type="email"
-  id="email"
-  required
-  className="input-custom-shadow"
-  placeholder="your.email@example.com"
-/>
+            <div className="relative">
+              <label htmlFor="subject" className="text-white text-sm font-medium mb-2 font-sans label-custom">
+                Subject
+              </label>
+              <input name="subject" type="text" id="subject" required className="input-custom-shadow" placeholder="Enter your subject" />
+              <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">
+                <img src="/subjects.svg" alt="Subject Icon" className="w-6 h-6" />
+              </span>
+            </div>
 
-<span className="absolute right-4 top-10 text-[#3F83F8] text-lg">
-      
-      <img src="/email.svg" alt="Email Icon" className="w-6 h-6" />
-      </span>
+            <div className="relative">
+              <label htmlFor="message" className="text-white text-sm font-medium mb-2 font-sans label-custom">
+                Your Message
+              </label>
+              <textarea name="message" id="message" rows="5" className="input-custom-shadow" placeholder="Write your message here..." />
+              <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">
+                <img src="/chat.svg" alt="Chat Icon" className="w-6 h-6" />
+              </span>
+            </div>
 
-  </div>
-  <div className="relative">
-    <label htmlFor="subject" className="text-white text-sm font-medium mb-2 font-sans label-custom">Subject</label>
-    <input
-      name="subject"
-      type="text"
-      id="subject"
-      required
-      className="input-custom-shadow"
-      placeholder="Enter your subject"
-    />
-    <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">
-      
-    <img src="/subjects.svg" alt="Subject Icon" className="w-6 h-6" />
-    </span>
-  </div>
-  <div className="relative">
-    <label htmlFor="message" className="text-white text-sm font-medium mb-2 font-sans label-custom">Your Message</label>
-    <textarea
-      name="message"
-      id="message"
-      rows="5"
-      className="input-custom-shadow"
-      placeholder="Write your message here..."
-    />
-   <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">
-      
-      <img src="/chat.svg" alt="Chat Icon" className="w-6 h-6" />
-      </span>  </div>
-
-
-
-
-      <button
-  type="submit"
-  className="group relative inline-flex items-center justify-center px-8 py-4 font-semibold text-white rounded-full overflow-hidden botao-box"
->
-<span className="relative z-10">{emailSubmitted ? "Email Sent" : "Send e-mail"}</span>
-<span className="absolute top-0 left-0 w-0 h-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-all duration-500 group-hover:w-full"></span>
-</button>
-
-</form>
+            <button
+              type="submit"
+              disabled={emailSubmitted}
+              className={`group relative inline-flex items-center justify-center px-8 py-4 font-semibold text-white rounded-full overflow-hidden botao-box ${
+                emailSubmitted ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+            >
+              <span className="relative z-10">{emailSubmitted ? "Email Sent" : "Send e-mail"}</span>
+              <span className="absolute top-0 left-0 w-0 h-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-all duration-500 group-hover:w-full"></span>
+            </button>
+          </motion.form>
         )}
       </div>
     </section>
