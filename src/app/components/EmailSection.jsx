@@ -42,40 +42,42 @@ const EmailSection = () => {
   }, []);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Impede o recarregamento da página
 
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
+    const formData = new FormData(e.target);
+    const email = formData.get("email");
+    const subject = formData.get("subject");
+    const message = formData.get("message");
+
+    if (!email || !subject || !message) {
+      alert("Please fill in all fields.");
+      return;
+    }
 
     emailjs
       .send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         {
-          from_name: data.email,
-          subject: data.subject,
-          message: data.message,
+          from_name: email,
+          subject: subject,
+          message: message,
           to_name: "Gabriel",
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       )
       .then(
         (response) => {
-          if (response.status === 200) {
-            console.log("Message sent successfully", response);
-            setEmailSubmitted(true); // Aqui você pode garantir que o envio foi bem-sucedido
-          } else {
-            console.error("Failed to send message", response);
-          }
+          console.log("Message sent successfully", response);
+          setEmailSubmitted(true);
         },
         (error) => {
-          console.error("Failed to send message", error);
+          console.error("Error sending email", error);
+          alert("Error sending email. Please try again.");
         }
       );
   };
+
 
   return (
     <section
@@ -120,7 +122,7 @@ const EmailSection = () => {
 
           
 
-<form className="flex flex-col bg-[#030B17] p-10 rounded-xl shadow-2xl space-y-6 border-2 border-[#0A1A2F] hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.01]">
+<form  onSubmit={handleSubmit}  className="flex flex-col bg-[#030B17] p-10 rounded-xl shadow-2xl space-y-6 border-2 border-[#0A1A2F] hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.01]">
 <h2 className="text-white text-2xl font-extrabold text-center uppercase tracking-wide drop-shadow-lg title-table">Get In Touch</h2>
   <div className="relative box-email">
     <label htmlFor="email"
@@ -178,8 +180,8 @@ const EmailSection = () => {
   type="submit"
   className="group relative inline-flex items-center justify-center px-8 py-4 font-semibold text-white rounded-full overflow-hidden botao-box"
 >
-  <span className="relative z-10">Send e-mail</span>
-  <span className="absolute top-0 left-0 w-0 h-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-all duration-500 group-hover:w-full"></span>
+<span className="relative z-10">{emailSubmitted ? "Email Sent" : "Send e-mail"}</span>
+<span className="absolute top-0 left-0 w-0 h-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-all duration-500 group-hover:w-full"></span>
 </button>
 
 </form>
