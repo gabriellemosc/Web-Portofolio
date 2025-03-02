@@ -693,6 +693,51 @@ body {
 
 
 
+.title-table {
+  font-weight: 800;
+  font-size: 2rem;
+  text-align: center;
+  color: #a2bfeb;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1.0px;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 3px solid rgb(170, 207, 255);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.label-custom {
+  color: #ffffff;
+  font-size: 0.90rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-family: 'Segoe UI', sans-serif;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

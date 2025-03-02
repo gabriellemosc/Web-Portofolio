@@ -113,50 +113,63 @@ const EmailSection = () => {
         {emailSubmitted ? (
           <p className="text-green-500 text-sm mt-2">Email sent successfully!</p>
         ) : (
-<form className="flex flex-col bg-gradient-to-br from-[#162238] to-[#1F2A3D] p-6 rounded-xl shadow-md space-y-4 border-2 border-[#2F3D52] hover:shadow-lg transition-all duration-400 transform hover:scale-102">
-  <div className="relative">
-    <label htmlFor="email" className="text-white text-sm font-semibold mb-2">Email</label>
+
+          
+
+<form className="flex flex-col bg-[#030B17] p-10 rounded-xl shadow-2xl space-y-6 border-2 border-[#0A1A2F] hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.01]">
+<h2 className="text-white text-2xl font-extrabold text-center uppercase tracking-wide drop-shadow-lg title-table">Get In Touch</h2>
+  <div className="relative box-email">
+    <label htmlFor="email"
+     className="text-white text-sm font-medium mb-2 font-sans label-custom"
+    >
+      Email Address</label>
     <input
       name="email"
       type="email"
       id="email"
       required
-      className="bg-[#23314C] border border-[#2F3D52] text-white placeholder-gray-400 text-sm rounded-lg w-full p-4 transition-all focus:ring-2 focus:ring-primary-500 focus:outline-none hover:border-primary-500 shadow-sm"
-      placeholder="you@example.com"
+      className="bg-[#102A43] border border-[#1E3A5F] text-white placeholder-gray-300 text-base rounded-lg w-full p-4 transition-all focus:ring-2 focus:ring-[#3F83F8] focus:outline-none hover:border-[#3F83F8] shadow-lg hover:shadow-[#3F83F8]/50 font-sans"
+      placeholder="your.email@example.com"
     />
-    <span className="absolute right-4 top-10 text-gray-400 text-lg">📧</span>
+    <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">📧</span>
   </div>
   <div className="relative">
-    <label htmlFor="subject" className="text-white text-sm font-semibold mb-2">Subject</label>
+    <label htmlFor="subject" className="text-white text-sm font-medium mb-2 font-sans label-custom">Subject</label>
     <input
       name="subject"
       type="text"
       id="subject"
       required
-      className="bg-[#23314C] border border-[#2F3D52] text-white placeholder-gray-400 text-sm rounded-lg w-full p-4 transition-all focus:ring-2 focus:ring-primary-500 focus:outline-none hover:border-primary-500 shadow-sm"
+      className="bg-[#102A43] border border-[#1E3A5F] text-white placeholder-gray-300 text-base rounded-lg w-full p-4 transition-all focus:ring-2 focus:ring-[#3F83F8] focus:outline-none hover:border-[#3F83F8] shadow-lg hover:shadow-[#3F83F8]/50 font-sans"
       placeholder="Enter your subject"
     />
-    <span className="absolute right-4 top-10 text-gray-400 text-lg">📄</span>
+    <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">📄</span>
   </div>
   <div className="relative">
-    <label htmlFor="message" className="text-white text-sm font-semibold mb-2">Message</label>
+    <label htmlFor="message" className="text-white text-sm font-medium mb-2 font-sans label-custom">Your Message</label>
     <textarea
       name="message"
       id="message"
       rows="5"
-      className="bg-[#23314C] border border-[#2F3D52] text-white placeholder-gray-400 text-sm rounded-lg w-full p-4 transition-all focus:ring-2 focus:ring-primary-500 focus:outline-none hover:border-primary-500 shadow-sm"
-      placeholder="Your message here"
+      className="bg-[#102A43] border border-[#1E3A5F] text-white placeholder-gray-300 text-base rounded-lg w-full p-4 transition-all focus:ring-2 focus:ring-[#3F83F8] focus:outline-none hover:border-[#3F83F8] shadow-lg hover:shadow-[#3F83F8]/50 font-sans"
+      placeholder="Write your message here..."
     />
-    <span className="absolute right-4 top-10 text-gray-400 text-lg">💬</span>
+    <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">💬</span>
   </div>
   <button
     type="submit"
-    className="bg-gradient-to-r from-[#42C2FF] to-[#0A84FF] text-white font-bold py-4 px-8 rounded-lg w-full transition-all duration-300 shadow-md hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-3"
+    className="bg-gradient-to-r from-[#3F83F8] to-[#1E5DB8] text-white font-semibold py-4 px-8 rounded-lg w-full transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-110 flex items-center justify-center gap-3  tracking-wide font-sans"
   >
-    <span className="text-xl">🚀</span> Send
+     Send E-mail<span className="text-xl"></span>
   </button>
 </form>
+
+
+
+
   
+
+
 
 
 
