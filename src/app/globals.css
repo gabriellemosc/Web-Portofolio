@@ -724,32 +724,33 @@ body {
 
 
 
+.input-custom-shadow {
+  background-color: #010229;
+  border: 2px solid #000000;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 30px;
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
 
+.input-custom-shadow::placeholder {
+  color: #00ffff;
+  opacity: 0.45;
+}
 
+.input-custom-shadow:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 10px rgba(65, 179, 163, 0.3);
+  outline: none;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.input-custom-shadow:hover {
+  border-color: #00ffff;
+}
 
 
 

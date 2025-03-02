@@ -123,14 +123,15 @@ const EmailSection = () => {
      className="text-white text-sm font-medium mb-2 font-sans label-custom"
     >
       Email Address</label>
-    <input
-      name="email"
-      type="email"
-      id="email"
-      required
-      className="bg-[#102A43] border border-[#1E3A5F] text-white placeholder-gray-300 text-base rounded-lg w-full p-4 transition-all focus:ring-2 focus:ring-[#3F83F8] focus:outline-none hover:border-[#3F83F8] shadow-lg hover:shadow-[#3F83F8]/50 font-sans"
-      placeholder="your.email@example.com"
-    />
+      <input
+  name="email"
+  type="email"
+  id="email"
+  required
+  className="input-custom-shadow"
+  placeholder="your.email@example.com"
+/>
+
     <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">📧</span>
   </div>
   <div className="relative">
@@ -140,7 +141,7 @@ const EmailSection = () => {
       type="text"
       id="subject"
       required
-      className="bg-[#102A43] border border-[#1E3A5F] text-white placeholder-gray-300 text-base rounded-lg w-full p-4 transition-all focus:ring-2 focus:ring-[#3F83F8] focus:outline-none hover:border-[#3F83F8] shadow-lg hover:shadow-[#3F83F8]/50 font-sans"
+      className="input-custom-shadow"
       placeholder="Enter your subject"
     />
     <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">📄</span>
@@ -151,7 +152,7 @@ const EmailSection = () => {
       name="message"
       id="message"
       rows="5"
-      className="bg-[#102A43] border border-[#1E3A5F] text-white placeholder-gray-300 text-base rounded-lg w-full p-4 transition-all focus:ring-2 focus:ring-[#3F83F8] focus:outline-none hover:border-[#3F83F8] shadow-lg hover:shadow-[#3F83F8]/50 font-sans"
+      className="input-custom-shadow"
       placeholder="Write your message here..."
     />
     <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">💬</span>
