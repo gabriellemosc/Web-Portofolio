@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation"; // Importando usePathname
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
@@ -17,6 +17,10 @@ const navLinks = [
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname(); // Obtendo o pathname atual da página
+
+  // Verifica se a página atual é a do CV
+  const isCvPage = pathname === "/cv";
 
   // Função para tratar a navegação correta
   const handleNavigation = (path) => {
@@ -33,7 +37,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
+    <nav
+      className={`fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 ${
+        isCvPage ? "bg-black bg-opacity-100" : "bg-[#121212] bg-opacity-80"
+      }`}
+    >
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         
         {/* Ícones de redes sociais e Logo */}
@@ -74,13 +82,14 @@ const Navbar = () => {
                   onClick={() => handleNavigation(link.path)}
                   className="text-white hover:text-gray-400 transition-all duration-200 flex items-center gap-2"
                 >
-         <Image
-            src={link.icon}
-            alt={link.title}
-            width={20}
-            height={20}
-            className="icon-effect-nav"
-          />                  <span className="text-effect">{link.title}</span>
+                  <Image
+                    src={link.icon}
+                    alt={link.title}
+                    width={20}
+                    height={20}
+                    className="icon-effect-nav"
+                  />                  
+                  <span className="text-effect">{link.title}</span>
                 </button>
               </li>
             ))}
@@ -95,3 +104,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+  
