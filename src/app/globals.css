@@ -21,7 +21,7 @@ body {
   background: linear-gradient(
       to bottom,
       rgb(0, 0, 0), /* Escuro para o início do gradiente */
-      rgb(30, 33, 34)  /* Um tom mais escuro para o final */
+      rgb(0, 0, 0)  /* Um tom mais escuro para o final */
     );
 }
 
@@ -697,45 +697,56 @@ body {
   font-weight: 800;
   font-size: 2rem;
   text-align: center;
-  color: #a2bfeb;
+  color: #ffffff;
   position: relative;
   display: inline-block;
   letter-spacing: 1.0px;
   text-transform: uppercase;
   padding-bottom: 8px;
   margin-bottom: 12px;
-  border-bottom: 3px solid rgb(170, 207, 255);
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 
 .label-custom {
-  color: #ffffff;
-  font-size: 0.90rem;
-  font-weight: 600;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 800;
   text-transform: capitalize;
   font-family: 'Segoe UI', sans-serif;
   margin-bottom: 5px;
-  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
+  background: linear-gradient(45deg, #ffffff, #a09f9f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: text-shadow 0.3s ease;
+}
 
+.label-custom:hover {
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 
 
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
 .input-custom-shadow {
   background-color: #010229;
-  border: 2px solid #000000;
-  color: #fff;
+  border: 2px solid #000;
+  color: #f1e3e3;
   padding: 12px 16px;
   border-radius: 30px;
+  font-weight: 600;
   width: 100%;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
+  letter-spacing: 0.3px;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+
+
 
 .input-custom-shadow::placeholder {
   color: #00ffff;
@@ -743,16 +754,45 @@ body {
 }
 
 .input-custom-shadow:focus {
-  border-color: #00ffff;
+  border-color: #03347c;
   box-shadow: 0 0 10px rgba(65, 179, 163, 0.3);
   outline: none;
 }
 
 .input-custom-shadow:hover {
-  border-color: #00ffff;
+  border-color: #03347c ;
 }
 
+/* Arquivo CSS */
+.botao-box {
+  background-color: #00193b; /* Cor inicial azul escuro */
+  transition: all 0.3s ease;
+  position: relative;
+}
 
+.botao-box:hover {
+  background-color: #020e52; /* Azul marinho para o hover */
+  transform: scale(1.03); /* Efeito de aumento */
+  box-shadow: 0 4px 15px rgba(2, 14, 82, 0.3); /* Brilho mais suave no hover */
+}
+
+/* Efeito da barra de brilho */
+.botao-box .group-hover\:w-full {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 75, 153, 0.2), rgba(0, 75, 153, 0.5), rgba(0, 75, 153, 0.2)); /* Gradiente azul suave */
+  transition: width 0.4s ease;
+}
+x
+.botao-box:hover .group-hover\:w-full {
+  width: 100%; /* Efeito de aumento da barra no hover */
+}
+
+/* Efeito de brilho mais forte no hover */
+.botao-box:hover span {
+  color: #ffffff; /* Cor do texto em branco quando o hover acontece */
+  font-weight: 800;
+}
 
 
 

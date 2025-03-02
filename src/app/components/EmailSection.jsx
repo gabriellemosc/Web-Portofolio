@@ -64,8 +64,12 @@ const EmailSection = () => {
       )
       .then(
         (response) => {
-          console.log("Message sent successfully", response);
-          setEmailSubmitted(true);
+          if (response.status === 200) {
+            console.log("Message sent successfully", response);
+            setEmailSubmitted(true); // Aqui você pode garantir que o envio foi bem-sucedido
+          } else {
+            console.error("Failed to send message", response);
+          }
         },
         (error) => {
           console.error("Failed to send message", error);
@@ -132,7 +136,11 @@ const EmailSection = () => {
   placeholder="your.email@example.com"
 />
 
-    <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">📧</span>
+<span className="absolute right-4 top-10 text-[#3F83F8] text-lg">
+      
+      <img src="/email.svg" alt="Email Icon" className="w-6 h-6" />
+      </span>
+
   </div>
   <div className="relative">
     <label htmlFor="subject" className="text-white text-sm font-medium mb-2 font-sans label-custom">Subject</label>
@@ -144,7 +152,10 @@ const EmailSection = () => {
       className="input-custom-shadow"
       placeholder="Enter your subject"
     />
-    <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">📄</span>
+    <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">
+      
+    <img src="/subjects.svg" alt="Subject Icon" className="w-6 h-6" />
+    </span>
   </div>
   <div className="relative">
     <label htmlFor="message" className="text-white text-sm font-medium mb-2 font-sans label-custom">Your Message</label>
@@ -155,27 +166,23 @@ const EmailSection = () => {
       className="input-custom-shadow"
       placeholder="Write your message here..."
     />
-    <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">💬</span>
-  </div>
-  <button
-    type="submit"
-    className="bg-gradient-to-r from-[#3F83F8] to-[#1E5DB8] text-white font-semibold py-4 px-8 rounded-lg w-full transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-110 flex items-center justify-center gap-3  tracking-wide font-sans"
-  >
-     Send E-mail<span className="text-xl"></span>
-  </button>
+   <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">
+      
+      <img src="/chat.svg" alt="Chat Icon" className="w-6 h-6" />
+      </span>  </div>
+
+
+
+
+      <button
+  type="submit"
+  className="group relative inline-flex items-center justify-center px-8 py-4 font-semibold text-white rounded-full overflow-hidden botao-box"
+>
+  <span className="relative z-10">Send e-mail</span>
+  <span className="absolute top-0 left-0 w-0 h-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-all duration-500 group-hover:w-full"></span>
+</button>
+
 </form>
-
-
-
-
-  
-
-
-
-
-
-
-
         )}
       </div>
     </section>
