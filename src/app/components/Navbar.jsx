@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import { useRouter, usePathname } from "next/navigation"; // Importando usePathname
+import { useRouter, usePathname } from "next/navigation"; 
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
@@ -17,12 +17,12 @@ const navLinks = [
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const router = useRouter();
-  const pathname = usePathname(); // Obtendo o pathname atual da página
+  const pathname = usePathname();   
 
-  // Verifica se a página atual é a do CV
+  
   const isCvPage = pathname === "/cv";
 
-  // Função para tratar a navegação correta
+  
   const handleNavigation = (path) => {
     if (path.startsWith("#")) {
       if (window.location.pathname === "/") {
@@ -33,7 +33,7 @@ const Navbar = () => {
     } else {
       router.push(path);
     }
-    setNavbarOpen(false); // Fecha o menu móvel ao clicar em um link
+    setNavbarOpen(false); 
   };
 
   return (
@@ -44,7 +44,7 @@ const Navbar = () => {
     >
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         
-        {/* Ícones de redes sociais e Logo */}
+        {/*  Sociais and Logo icons */}
         <div className="logo-social-container flex items-center gap-4">
           <div className="social-link-nav flex gap-3">
             <Link href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
@@ -62,7 +62,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Botão do Menu Mobile */}
+        {/*  Menu Mobile */}
         <div className="mobile-menu block md:hidden">
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
@@ -97,7 +97,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Menu Mobile Overlay */}
+      {/* Menu Mobile  */}
       {navbarOpen ? <MenuOverlay links={navLinks} onClose={() => setNavbarOpen(false)} /> : null}
     </nav>
   );

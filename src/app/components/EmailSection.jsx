@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion"; // Importando o Framer Motion
+import { motion } from "framer-motion"; 
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
@@ -10,23 +10,25 @@ import emailjs from "emailjs-com";
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [alertMessage, setAlertMessage] = useState(""); 
+
 
   // Cria uma ref para observar a seção inteira
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    // Configura o Intersection Observer para detectar quando a seção entra ou sai de view
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsVisible(true); // Quando entra na tela
+            setIsVisible(true); 
           } else {
-            setIsVisible(false); // Quando sai da tela
+            setIsVisible(false); 
           }
         });
       },
-      { threshold: 0.2 } // Aciona quando 20% do elemento estiver visível
+      { threshold: 0.2 } 
     );
 
     if (sectionRef.current) {
@@ -41,18 +43,27 @@ const EmailSection = () => {
   }, []);
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Impede o recarregamento da página
+    e.preventDefault(); 
 
     const formData = new FormData(e.target);
     const email = formData.get("email");
     const subject = formData.get("subject");
     const message = formData.get("message");
 
+     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     if (!email || !subject || !message) {
-      alert("Please fill in all fields.");
+      setAlertMessage("Please fill in all fields.");
+      setTimeout(() => setAlertMessage(""), 3000); 
       return;
     }
 
+    if (!emailRegex.test(email)) {
+      setAlertMessage("Please enter a valid email address.");
+      setTimeout(() => setAlertMessage(""), 3000);
+      return;
+    }
+    
     emailjs
       .send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
@@ -82,18 +93,18 @@ const EmailSection = () => {
       id="contact"
       ref={sectionRef}
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
-    >
-      {/* Tudo dentro de um único motion.div */}
+    >  
+      {/* All inside motion.div */}
       <motion.div
         initial={{ x: "-100%", opacity: 0 }}
         animate={isVisible ? { x: 0, opacity: 1 } : { x: "-100%", opacity: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative z-10 flex flex-col md:flex-row items-center justify-between"
       >
-        {/* Div de background animada */}
+        {/* Animated DIv */}
         <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform scale-70 -translate-x-1/2 -translate-1/2 small-gradient"></div>
 
-        {/* Bloco de texto animado */}
+        {/* Animated Div  */}
         <div className="z-10">
           <h5 className="text-xl font-bold text-white my-2 lets-connect">Let&apos;s Connect</h5>
           <p className="text-[#ADB7BE] mb-4 max-w-md text-email-section">
@@ -111,18 +122,27 @@ const EmailSection = () => {
         </div>
       </motion.div>
 
-      {/* Formulário de contato */}
+      {/* Form contact */}
       <div>
+
+         {/* Show message when necessesary */}
+         {alertMessage && (
+    <p className="text-red-500 text-[20px] font-bold mt-2">{alertMessage}</p>
+  )}
+
         {emailSubmitted ? (
-          <p className="text-green-500 text-sm mt-2">Email sent successfully!</p>
+      <p className="text-green-500 text-[23px] mt-2">Email sent successfully!</p>
+
+
+
         ) : (
           <motion.form
             onSubmit={handleSubmit}
-            initial={{ translateX: "100%", opacity: 1 }} // Começa fora da tela (100% da largura)
+            initial={{ translateX: "100%", opacity: 1 }} 
             animate={isVisible ? { translateX: "0%", opacity: 1 } : { translateX: "20%", opacity: 1 }} 
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="flex flex-col bg-[#030B17] p-10 rounded-xl shadow-2xl space-y-6 border-2 border-[#0A1A2F] hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.01]"
-            style={{ clipPath: "inset(0px 0px 0px 0px)" }} // Garante que não haja overflow lateral
+            style={{ clipPath: "inset(0px 0px 0px 0px)" }} 
           >
             <h2 className="text-white text-2xl font-extrabold text-center uppercase tracking-wide drop-shadow-lg">
               Get In Touch
