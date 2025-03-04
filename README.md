@@ -7,8 +7,7 @@ This is a personal portfolio website built with Next.js and Tailwind CSS. It sho
 - **Fully Responsive**: Works seamlessly across all screen sizes and devices.
 - **Modern Design**: Clean and professional UI/UX.
 - **Projects Showcase**: Display detailed information about personal and professional projects.
-- **Contact Form**: Integrated email system using Resend API.
-- **Dark Mode**: Built-in light and dark mode toggle.
+- **Contact Form**: Integrated email system using emailjs.
 - **SEO Optimized**: Includes meta tags and Open Graph data for better search engine visibility.
 
 ## Installation
@@ -43,7 +42,7 @@ This project is built using the following technologies:
 - **React**: A JavaScript library for building interactive user interfaces.
 - **TypeScript**: A strongly typed superset of JavaScript for better code maintainability.
 - **React Icons**: A library of popular icons for seamless integration.
-- **Resend**: A developer-friendly email API for handling contact form submissions.
+- **Emailjs**: A developer-friendly email API for handling contact form submissions.
 
 ## Folder Structure
 
@@ -88,13 +87,7 @@ If you would like to contribute, feel free to fork the repository and submit a p
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the code under the terms of the license.
 
-## Contact
 
-If you have any questions or feedback, feel free to reach out:
-
-- Email: [your.email@example.com](mailto\:your.email@example.com)
-- LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/your-profile)
-- GitHub: [Your GitHub](https://github.com/gabriellemosc)
 
 ---
 
