@@ -47,13 +47,13 @@ const Navbar = () => {
         {/*  Sociais and Logo icons */}
         <div className="logo-social-container flex items-center gap-4">
           <div className="social-link-nav flex gap-3">
-            <Link href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+            <Link href="https://www.linkedin.com/in/gabriel-lemos-cerqueira/" target="_blank" aria-label="LinkedIn">
               <Image src="in.svg" alt="LinkedIn" width={20} height={30} />
             </Link>
-            <Link href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+            <Link href="https://www.instagram.com/gabriel_lemosc77/" target="_blank" aria-label="Instagram">
               <Image src="instagram.svg" alt="Instagram" width={20} height={30} />
             </Link>
-            <Link href="https://github.com/seu_usuario" target="_blank" aria-label="GitHub">
+            <Link href="https://github.com/gabriellemosc" target="_blank" aria-label="GitHub">
               <Image src="github.svg" alt="GitHub" width={20} height={24} />
             </Link>
           </div>
