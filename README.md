@@ -89,7 +89,5 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 
 
 
----
 
-Enjoy building your portfolio and showcasing your work to the world! 🚀
 
