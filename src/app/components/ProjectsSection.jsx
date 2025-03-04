@@ -10,7 +10,7 @@ const projectsData = [
     title: "Portfolio Website",
     description: "My Personal Portfolio where I show my projects, resume, professional contacts and a little about myself and my skills.",
     image: "/images/projects/portfolio_home.png",
-    previewImgEye:"/images/projects/portfolio_url_pre.png", // Preview do EyeIcon
+    previewImgEye:"/images/projects/portfolio_url_pre.png", 
     tag: ["All", "Web"],
     gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
     previewUrl: "/",
@@ -20,7 +20,7 @@ const projectsData = [
       title: "E-commerce Project",
       description: 'An e-commerce inspired by a Brazilian web store called "Reserva", with payment and login system.',
       image: "/images/projects/reserva_project.png",
-      previewImage: "/images/projects/Code_Git/reserva_project.png", // Imagem de preview personalizada
+      previewImage: "/images/projects/Code_Git/reserva_project.png", 
       tag: ["All", "Web"],
       gitUrl: "https://github.com/gabriellemosc/Ecommerce_Project",
       previewUrl: null,
@@ -32,8 +32,8 @@ const projectsData = [
     title: "Terminal Portfolio",
     description: "A Portfolio Terminal made with JavaScript, where I tell a little more about myself and my interests.",
     image: "/images/projects/terminal_portfolio.png",
-    previewImage: "/images/projects/Code_Git/code_terminal.png", // Imagem de preview personalizada
-    previewImgEye:"/images/projects/terminal_pre_url.png", // Preview do EyeIcon
+    previewImage: "/images/projects/Code_Git/code_terminal.png", 
+    previewImgEye:"/images/projects/terminal_pre_url.png", 
     tag: ["All", "Web"],
     gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
     previewUrl: "https://gabriellemosc.github.io/Porfolio-Terminal/",
@@ -43,7 +43,7 @@ const projectsData = [
     title: "Netflix Project",
     description: "A website made with Django, with an interface inspired by Netflix, with a recommendation system and management of films and TV series.",
     image: "/images/projects/netflix_project.png",
-    previewImage: "/images/projects/Code_Git/netflix_project.png", // Imagem de preview personalizada
+    previewImage: "/images/projects/Code_Git/netflix_project.png", 
     tag: ["All", "Web"],
     gitUrl: "https://github.com/gabriellemosc/Netflix_Copy",
     previewUrl: null,
@@ -53,7 +53,7 @@ const projectsData = [
     title: "Flappy Bird Game",
     description: "The classic FlappyBird game, recreated in Python using the Pygame library, featuring smooth physics and engaging gameplay.",
     image: "/images/projects/flappybird_project.webp",
-    previewImage: "/images/projects/Code_Git/flappy_project.png", // Imagem de preview personalizada
+    previewImage: "/images/projects/Code_Git/flappy_project.png", 
     tag: ["All", "Mobile"],
     gitUrl: "https://github.com/gabriellemosc/Flappy-Bird",
     previewUrl: null,
@@ -66,7 +66,7 @@ const projectsData = [
     previewImage: "/images/projects/Code_Git/app_kivy.png",
     tag: ["All", "Mobile"],
     gitUrl: "https://github.com/gabriellemosc/App-de-Vendas-",
-    previewUrl: null, // <- Definido como null
+    previewUrl: null, 
   },
 ];
 
@@ -74,7 +74,7 @@ const ProjectItem = ({ project, index }) => {
   const itemRef = useRef(null);
   const itemInView = useInView(itemRef, { amount: 0.3 });
   const [isHovered, setIsHovered] = useState(false);
-  const [isEyeHovered, setIsEyeHovered] = useState(false); // EyeIcon
+  const [isEyeHovered, setIsEyeHovered] = useState(false); 
 
   const handleMouseEnter = (type) => {
     if (type === "preview") setIsHovered(true);
@@ -98,8 +98,8 @@ const ProjectItem = ({ project, index }) => {
         title={project.title}
         description={project.description}
         imgUrl={project.image}
-        previewImg={project.previewImage} // Preview do CodeBracketIcon
-        previewImgEye={project.previewImgEye} // Preview do EyeIcon
+        previewImg={project.previewImage} 
+        previewImgEye={project.previewImgEye} 
         gitUrl={project.gitUrl}
         previewUrl={project.previewUrl}
         className="project-image"
@@ -108,14 +108,14 @@ const ProjectItem = ({ project, index }) => {
         onMouseLeave={handleMouseLeave}
       />
 
-      {/* Exibir preview quando o CodeBracketIcon estiver hoverizado */}
+      {/* Show preview when o CodeBracketIcon hoovered */}
       {isHovered && !isEyeHovered && (
         <div className="preview-box">
           <img src={project.previewImage || project.image} alt={project.title} />
         </div>
       )}
 
-      {/* Exibir preview quando o EyeIcon estiver hoverizado */}
+      {/* Show preview when the EyeIcon hoover */}
       {isEyeHovered && !isHovered && (
         <div className="preview-box">
           <img src={project.previewImgEye || project.image} alt={project.title} />

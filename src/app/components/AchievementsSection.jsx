@@ -16,17 +16,17 @@ const achievementsList = [
     postfix: "+",
   },
   {
-    prefix: "~",
-    metric: "Users",
-    value: "100,000",
+    prefix: "~",  
+    metric: "GitHub commits",
+    value: "1000",
   },
   {
-    metric: "Awards",
+    metric: "Certifications",
     value: "7",
   },
   {
     metric: "Years",
-    value: "5",
+    value: "3",
   },
 ];
 

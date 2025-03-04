@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
-// Array com os ícones das ferramentas de programação
 const TOOL_ICONS = [
   { name: "Node.js", src: "/noda_js.svg" },
   { name: "Docker", src: "/docker.svg" },

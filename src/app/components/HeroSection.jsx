@@ -46,9 +46,9 @@ const HeroSection = () => {
             </Link>
             <Link
               href="/cvgabriel.pdf"
-              download="cv_gabriel_lemos.pdf" // Força o download com esse nome
-              target="_blank" // Abre em nova aba para garantir compatibilidade
-              rel="noopener noreferrer" // Segurança adicional
+              download="cv_gabriel_lemos.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
               className="px-1 inline-block botoes_inicio"
             >
               <span className="rounded-full px-5 py-2">

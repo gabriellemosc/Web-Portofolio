@@ -13,7 +13,7 @@ const EmailSection = () => {
   const [alertMessage, setAlertMessage] = useState(""); 
 
 
-  // Cria uma ref para observar a seção inteira
+  
   const sectionRef = useRef(null);
 
   useEffect(() => {

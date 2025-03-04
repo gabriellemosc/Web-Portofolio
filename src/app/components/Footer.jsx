@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa"; // Utilizando react-icons para os ícones
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa"; 
 
 const Footer = () => {
   return (
@@ -26,15 +26,15 @@ const Footer = () => {
 
         </div>
         
-        {/* Links de Navegação */}
-        <div className="flex gap-4 mb-4 md:mb-0">
+        {/* Links  */}
+        <div className="flex gap-4 mb-4 md:mb-8">
           <Link href="#about" className="hover:text-slate-300 font-bold ">About</Link>
           <Link href="#projects" className="hover:text-slate-300 font-bold">Projects</Link>
           <Link href="#contact" className="hover:text-slate-300 font-bold">Contact</Link>
         </div>
         
         {/* Socials */}
-        <div className="flex gap-4">
+        <div className="flex gap-4 mb-8">
           <Link href="https://github.com/gabriellemosc" target="_blank" rel="noopener noreferrer">
             <FaGithub size={24} className="hover:text-slate-500" />
           </Link>

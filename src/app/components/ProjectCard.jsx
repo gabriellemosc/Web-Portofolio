@@ -14,7 +14,7 @@ const ProjectCard = ({ imgUrl, previewImg, previewImgEye, title, description, gi
       >
         <div className="overlay flex gap-4 items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
           
-          {/* Ícone do GitHub */}
+          {/* Icon  GitHub */}
           <div 
             className="flex flex-col items-center relative"
             onMouseEnter={() => setIsHovered(true)}
@@ -37,7 +37,7 @@ const ProjectCard = ({ imgUrl, previewImg, previewImgEye, title, description, gi
             )}
           </div>
 
-          {/* Ícone de Preview (EyeIcon) */}
+          {/*   Preview (EyeIcon) */}
           {previewUrl && (
             <div 
               className="flex flex-col items-center relative"
@@ -53,7 +53,7 @@ const ProjectCard = ({ imgUrl, previewImg, previewImgEye, title, description, gi
                 <EyeIcon className="h-10 w-10 text-[#ADB7BE] cursor-pointer transition-all duration-600 group-hover:shadow-lg group-hover:shadow-black group-hover:animate-pulse" />
               </Link>
 
-              {/* Preview Box do EyeIcon */}
+              {/* Preview  EyeIcon */}
               {isHoveredEye && previewImgEye && (
                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 w-64 h-36 bg-white border border-gray-300 shadow-lg rounded-lg overflow-hidden z-50 transition-opacity duration-300 opacity-100">
                   <img src={previewImgEye} alt={`Preview de ${title}`} className="w-full h-full object-cover" />
