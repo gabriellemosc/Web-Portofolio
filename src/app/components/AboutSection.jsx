@@ -114,8 +114,8 @@ const AboutSection = () => {
                   <Image
                     src="/fsa_site.png"
                     alt="FSA Site"
-                    width={256}  // Equivalente a w-64 (64 * 4)
-                    height={160} // Equivalente a h-40 (40 * 4)
+                    width={256}  
+                    height={160} 
                     className="w-full h-full object-cover rounded-md"
                   />
               </div>
