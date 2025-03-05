@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import Image from 'next/image';
 
 const ProjectCard = ({ imgUrl, previewImg, previewImgEye, title, description, gitUrl, previewUrl, descriptionClass }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -55,9 +56,16 @@ const ProjectCard = ({ imgUrl, previewImg, previewImgEye, title, description, gi
 
               {/* Preview  EyeIcon */}
               {isHoveredEye && previewImgEye && (
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 w-64 h-36 bg-white border border-gray-300 shadow-lg rounded-lg overflow-hidden z-50 transition-opacity duration-300 opacity-100">
-                  <img src={previewImgEye} alt={`Preview de ${title}`} className="w-full h-full object-cover" />
-                </div>
+                            
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 w-64 h-36 bg-white border border-gray-300 shadow-lg rounded-lg overflow-hidden z-50 transition-opacity duration-300 opacity-100">
+                <Image 
+                  src={previewImgEye} 
+                  alt={`Preview de ${title}`} 
+                  width={256} 
+                  height={144}  
+                  className="w-full h-full object-cover" 
+                />
+              </div>
               )}
             </div>
           )}

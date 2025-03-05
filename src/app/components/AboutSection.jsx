@@ -111,11 +111,13 @@ const AboutSection = () => {
                 Foundation Santo Andre
               </a>
               <div className="preview-box absolute left-1/2 transform -translate-x-1/2 bottom-full w-64 h-40 bg-white border border-gray-300 rounded-md shadow-lg hidden group-hover:block z-50">
-                <img
-                  src="fsa_site.png"
-                  alt="FSA Site"
-                  className="w-full h-full object-cover rounded-md"
-                />
+                  <Image
+                    src="/fsa_site.png"
+                    alt="FSA Site"
+                    width={256}  // Equivalente a w-64 (64 * 4)
+                    height={160} // Equivalente a h-40 (40 * 4)
+                    className="w-full h-full object-cover rounded-md"
+                  />
               </div>
             </span>
           </ul>
