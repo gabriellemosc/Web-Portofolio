@@ -38,20 +38,25 @@ const AboutSection = () => {
 
   const useIntersectionObserver = (ref, setState) => {
     useEffect(() => {
+      const currentRef = ref.current; 
+  
+      if (!currentRef) return;
+  
       const observer = new IntersectionObserver(
         ([entry]) => {
           setState(entry.isIntersecting);
         },
         { threshold: 0.5 }
       );
-
-      if (ref.current) observer.observe(ref.current);
-
+  
+      observer.observe(currentRef);
+  
       return () => {
-        if (ref.current) observer.unobserve(ref.current);
+        observer.unobserve(currentRef); 
       };
     }, [ref, setState]);
   };
+  
 
   useIntersectionObserver(titleRef, setIsTitleVisible);
   useIntersectionObserver(textRef, setIsTextVisible);
@@ -154,7 +159,7 @@ const AboutSection = () => {
             className={`text-base sm:text-lg about_text ${isTextVisible ? "animate-visible" : ""}`}
           >
             <p className="about_p">
-              I'm a <strong>backend developer</strong> from <i>Sao Paulo, Brazil</i>, passionate about{" "}
+            I&apos;m  a <strong>backend developer</strong> from <i>Sao Paulo, Brazil</i>, passionate about{" "}
               <strong>technology</strong> and solving <strong>complex problems</strong>. With experience in software
               development, I focus on creating <strong>scalable, efficient, and secure</strong> systems that drive innovation.
             </p>

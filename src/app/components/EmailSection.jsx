@@ -17,30 +17,26 @@ const EmailSection = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    
+    const currentSectionRef = sectionRef.current; 
+  
+    if (!currentSectionRef) return;
+  
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true); 
-          } else {
-            setIsVisible(false); 
-          }
+          setIsVisible(entry.isIntersecting);
         });
       },
-      { threshold: 0.2 } 
+      { threshold: 0.2 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+  
+    observer.observe(currentSectionRef);
+  
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      observer.unobserve(currentSectionRef); 
     };
   }, []);
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault(); 
@@ -108,7 +104,7 @@ const EmailSection = () => {
         <div className="z-10">
           <h5 className="text-xl font-bold text-white my-2 lets-connect">Let&apos;s Connect</h5>
           <p className="text-[#ADB7BE] mb-4 max-w-md text-email-section">
-            <span className="span-text-email-section">Let's Talk.</span> I'm always open to new connections, whether it's for career opportunities or a tech discussion, feel free to reach out. If you’re interested and liked it, I'd like to have an opportunity to chat!
+            <span className="span-text-email-section">Let&apos;s Talk.</span> I'm always open to new connections, whether it's for career opportunities or a tech discussion, feel free to reach out. If you’re interested and liked it, I'd like to have an opportunity to chat!
           </p>
 
           <div className="socials flex flex-row gap-2">
