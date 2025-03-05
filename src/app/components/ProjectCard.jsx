@@ -33,8 +33,14 @@ const ProjectCard = ({ imgUrl, previewImg, previewImgEye, title, description, gi
             {/* Preview Box do GitHub */}
             {isHovered && previewImg && (
               <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 w-64 h-36 bg-white border border-gray-300 shadow-lg rounded-lg overflow-hidden z-50 transition-opacity duration-300 opacity-100">
-                <img src={previewImg} alt={`Preview de ${title}`} className="w-full h-full object-cover" />
-              </div>
+              <Image 
+                src={previewImg} 
+                alt={`Preview de ${title}`} 
+                className="w-full h-full object-cover"
+                width={256} 
+                height={144} 
+              />
+            </div>
             )}
           </div>
 

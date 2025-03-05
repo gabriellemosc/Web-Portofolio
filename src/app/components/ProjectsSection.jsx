@@ -112,16 +112,28 @@ const ProjectItem = ({ project, index }) => {
 
       {/* Show preview when o CodeBracketIcon hoovered */}
       {isHovered && !isEyeHovered && (
-        <div className="preview-box">
-          <img src={project.previewImage || project.image} alt={project.title} />
-        </div>
+       <div className="preview-box">
+       <Image 
+         src={project.previewImage || project.image} 
+         alt={project.title} 
+         width={300}  
+         height={200} 
+         className="w-full h-auto" 
+       />
+     </div>
       )}
 
       {/* Show preview when the EyeIcon hoover */}
       {isEyeHovered && !isHovered && (
-        <div className="preview-box">
-          <img src={project.previewImgEye || project.image} alt={project.title} />
-        </div>
+      <div className="preview-box">
+      <Image 
+        src={project.previewImgEye || project.image} 
+        alt={project.title} 
+        width={300} 
+        height={200} 
+        className="w-full h-auto" 
+      />
+    </div>
       )}
     </motion.li>
   );
