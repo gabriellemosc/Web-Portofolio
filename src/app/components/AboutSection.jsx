@@ -141,7 +141,7 @@ const AboutSection = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 ">
         <Image
           src="/images/me5.jpeg"
-          width={390}
+          width={710}
           height={500}
           className={`about-image ${isTitleVisible ? "animate-visible" : ""}`}
         />
@@ -154,7 +154,7 @@ const AboutSection = () => {
             className={`text-base sm:text-lg about_text ${isTextVisible ? "animate-visible" : ""}`}
           >
             <p className="about_p">
-              I am a <strong>backend developer</strong> from <i>Sao Paulo, Brazil</i>, passionate about{" "}
+              I'm a <strong>backend developer</strong> from <i>Sao Paulo, Brazil</i>, passionate about{" "}
               <strong>technology</strong> and solving <strong>complex problems</strong>. With experience in software
               development, I focus on creating <strong>scalable, efficient, and secure</strong> systems that drive innovation.
             </p>

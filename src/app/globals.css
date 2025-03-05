@@ -389,10 +389,13 @@ body {
 /* Estado inicial: escondido e deslocado para a esquerda */
 .about-image {
   opacity: 0;
-  border-radius: 70px;
+  border-radius: 80px 80px 40px 40px; /* Aplica o arredondamento apenas no topo */
   transform: translateX(-100px);
   transition: opacity 1s ease-out, transform 1s ease-out;
+  width: 100%; /* Ocupa todo o espaço disponível */
+  max-width: 450px; /* Define um limite */
 }
+
 
 /* Quando visível na tela */
 .about-image.animate-visible {
