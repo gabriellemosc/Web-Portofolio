@@ -754,6 +754,14 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+.icon-hover-email {
+  transition: transform 0.3s ease; /* Faz a transição suave */
+  font-weight: 700;
+}
+
+.icon-hover-email:hover {
+  transform: scale(1.10); /* Aumenta o tamanho para 120% */
+}
 
 
 .input-custom-shadow::placeholder {

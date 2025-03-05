@@ -104,16 +104,17 @@ const EmailSection = () => {
         <div className="z-10">
           <h5 className="text-xl font-bold text-white my-2 lets-connect">Let&apos;s Connect</h5>
           <p className="text-[#ADB7BE] mb-4 max-w-md text-email-section">
-            <span className="span-text-email-section">Let&apos;s Talk.</span> I'm always open to new connections, whether it's for career opportunities or a tech discussion, feel free to reach out. If you’re interested and liked it, I'd like to have an opportunity to chat!
+          <span className="span-text-email-section">Let&apos;s Talk.</span> I&apos;m always open to new connections, whether it&apos;s for career opportunities or a tech discussion, feel free to reach out. If you&apos;re interested and liked it, I&apos;d like to have an opportunity to chat!
           </p>
 
           <div className="socials flex flex-row gap-2">
-            <Link href="https://github.com/gabriellemosc" target="_blank" rel="noopener noreferrer">
-              <Image src={GithubIcon} alt="Github Icon" />
+          <Link href="https://github.com/gabriellemosc" target="_blank" rel="noopener noreferrer">
+              <Image src={GithubIcon} alt="Github Icon" className="icon-hover-email" />
             </Link>
             <Link href="https://www.linkedin.com/in/gabriel-lemos-cerqueira/" target="_blank" rel="noopener noreferrer">
-              <Image src={LinkedinIcon} alt="Linkedin Icon" />
+              <Image src={LinkedinIcon} alt="Linkedin Icon" className="icon-hover-email" />
             </Link>
+
           </div>
         </div>
       </motion.div>
@@ -150,7 +151,7 @@ const EmailSection = () => {
               </label>
               <input name="email" type="email" id="email" required className="input-custom-shadow" placeholder="your.email@example.com" />
               <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">
-                <img src="/email.svg" alt="Email Icon" className="w-6 h-6" />
+              <Image src="/email.svg" alt="Email Icon" width={24} height={24} className="w-6 h-6" />
               </span>
             </div>
 
@@ -160,8 +161,8 @@ const EmailSection = () => {
               </label>
               <input name="subject" type="text" id="subject" required className="input-custom-shadow" placeholder="Enter your subject" />
               <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">
-                <img src="/subjects.svg" alt="Subject Icon" className="w-6 h-6" />
-              </span>
+              <Image src="/subjects.svg" alt="Subject Icon" width={24} height={24} className="w-6 h-6" />
+                </span>
             </div>
 
             <div className="relative">
@@ -170,7 +171,7 @@ const EmailSection = () => {
               </label>
               <textarea name="message" id="message" rows="5" className="input-custom-shadow" placeholder="Write your message here..." />
               <span className="absolute right-4 top-10 text-[#3F83F8] text-lg">
-                <img src="/chat.svg" alt="Chat Icon" className="w-6 h-6" />
+              <Image src="/chat.svg" alt="Chat Icon" width={24} height={24} className="w-6 h-6" />
               </span>
             </div>
 

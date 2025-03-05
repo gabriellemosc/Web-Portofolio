@@ -148,6 +148,7 @@ const AboutSection = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 ">
         <Image
           src="/images/me5.jpeg"
+          alt="Gabriel" 
           width={710}
           height={500}
           className={`about-image ${isTitleVisible ? "animate-visible" : ""}`}
