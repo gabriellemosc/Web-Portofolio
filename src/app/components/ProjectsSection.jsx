@@ -10,9 +10,10 @@ const projectsData = [
     title: "Portfolio Website",
     description: "My Personal Portfolio where I show my projects, resume, professional contacts and a little about myself and my skills.",
     image: "/images/projects/portfolio_home.png",
+    previewImage: "/images/projects/web_portfolio.png", 
     previewImgEye:"/images/projects/portfolio_url_pre.png", 
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/gabriellemosc/Porfolio-Terminal",
+    gitUrl: "https://github.com/gabriellemosc/Web-Portofolio",
     previewUrl: "/",
   },
   {

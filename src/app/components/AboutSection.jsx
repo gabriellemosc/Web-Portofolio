@@ -140,8 +140,8 @@ const AboutSection = () => {
     <section className="text-white" id="about">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 ">
         <Image
-          src="/images/about-image.png"
-          width={500}
+          src="/images/me5.jpeg"
+          width={390}
           height={500}
           className={`about-image ${isTitleVisible ? "animate-visible" : ""}`}
         />

@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1200); // Tempo do preloader antes de desaparecer
+    }, 1200); //  preloader 
 
     return () => clearTimeout(timer);
   }, []);
