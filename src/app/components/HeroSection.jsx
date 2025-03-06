@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className="lg:py-16">
+    <section className="lg:py-16 px-21 sm:px-21">
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -21,16 +21,18 @@ const HeroSection = () => {
             </span>
             <br></br>
             <span className="animacao_h1"> 
-            <TypeAnimation
-              sequence={[
-                "Gabriel Lemos",
-                5000,
-                "Backend Developer",
-                5000,
-              ]}
+              <TypeAnimation
+                sequence={[
+                  "Gabriel Lemos",
+                  5000,
+                  "Backend Developer",
+                  5000,
+                ]}
               wrapper="span"
               speed={60}
               repeat={Infinity}
+              className="text-3xl sm:text-5xl lg:text-8xl whitespace-nowrap min-w-[200px]"
+
             />
             </span>
           </h1>
@@ -63,7 +65,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
-          <div className="rounded-full w-[250px] h-[250px] lg:w-[600px] lg:h-[600px] relative">
+          <div className="rounded-full w-[200px] h-[200px] lg:w-[550px] lg:h-[550px] relative">
             <Image
               src="/images/home-main.svg"
               alt="hero image"
