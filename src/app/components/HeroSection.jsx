@@ -15,10 +15,10 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
-          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600 welcome_h1">
-              Welcome, I&apos;m{" "}
-            </span>
+         <h1 className="text-white mb-6 text-4xl sm:text-5xl lg:text-8xl sm:leading-tight lg:leading-snug font-extrabold">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600 welcome_h1">
+                  Welcome, I&apos;m{" "}
+                </span>
             <br></br>
             <span className="animacao_h1"> 
               <TypeAnimation
