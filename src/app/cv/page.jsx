@@ -41,7 +41,7 @@ export default function CVPage() {
         <main className="relative w-full h-screen bg-[#121212]">
           {/* Show PDF */}
           <embed
-            src="/cvgabriel.pdf" 
+            src="/cv_gabriel_lemos.pdf" 
             type="application/pdf"
             className="absolute top-0 left-0 w-full h-full border-none"
             style={{
