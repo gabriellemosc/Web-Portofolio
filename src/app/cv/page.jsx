@@ -53,8 +53,8 @@ export default function CVPage() {
           />
           <div className="text-center px-4 sm:px-0 mt-4 absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2">
             <a
-              href="/cvgabriel.pdf"
-              download="cv_gabriel_lemos.pdf"
+              href="/cv_gabriel_lemos.pdf"
+              download="CV-Gabriel-lemos.pdf"
               className="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300"
             >
               📥 Download CV

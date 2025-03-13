@@ -47,8 +47,8 @@ const HeroSection = () => {
               Contact Me
             </Link>
             <Link
-              href="/cvgabriel_lemos.pdf"
-              download="cv_gabriel_lemos.pdf" 
+              href="/cv_gabriel_lemos.pdf"
+              download="CV-Gabriel-lemos.pdf" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="px-1 inline-block botoes_inicio"
