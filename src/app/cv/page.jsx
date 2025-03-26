@@ -41,7 +41,7 @@ export default function CVPage() {
         <main className="relative w-full h-screen bg-[#121212]">
           {/* Show PDF */}
           <embed
-            src="/cv_gabriel_lemos.pdf" 
+            src="/Gabriel_Lemos_CV.pdf" 
             type="application/pdf"
             className="absolute top-0 left-0 w-full h-full border-none"
             style={{
@@ -53,7 +53,7 @@ export default function CVPage() {
           />
           <div className="text-center px-4 sm:px-0 mt-4 absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2">
             <a
-              href="/cv_gabriel_lemos.pdf"
+              href="/Gabriel_Lemos_CV.pdf"    
               download="CV-Gabriel-lemos.pdf"
               className="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300"
             >
