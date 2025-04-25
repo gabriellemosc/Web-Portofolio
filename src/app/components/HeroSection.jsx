@@ -47,8 +47,8 @@ const HeroSection = () => {
               Contact Me
             </Link>
             <Link
-              href="/Gabriel_Lemos_CV.pdf"
-              download="CV-Gabriel-lemos.pdf" 
+              href="/Gabriel_Lemos_Cerqueira_Curriculo.pdf"
+              download="Gabriel_Lemos_Cerqueira_Curriculo.pdf" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="px-1 inline-block botoes_inicio"
@@ -67,11 +67,11 @@ const HeroSection = () => {
         >
           <div className="rounded-full w-[200px] h-[200px] lg:w-[550px] lg:h-[550px] relative">
             <Image
-              src="/images/home-main.svg"
+              src="/images/eu.jpeg"
               alt="hero image"
               className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={550}
-              height={500}
+              width={580}
+              height={400}
             />
           </div>
         </motion.div>
