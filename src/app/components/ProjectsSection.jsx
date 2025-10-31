@@ -8,14 +8,14 @@ import Image from "next/image";
 const projectsData = [
   {
     id: 1,
-    title: "Portfolio Website",
-    description: "My Personal Portfolio where I show my projects, resume, professional contacts and a little about myself and my skills.",
-    image: "/images/projects/portfolio_home.png",
-    previewImage: "/images/projects/web_portfolio.png", 
-    previewImgEye:"/images/projects/portfolio_url_pre.png", 
+    title: "Smart Stock ",
+    description: "It implements essential features of an inventory system, such as product registration, quantity control, categories, CRUD operations, and stock movements",
+    image: "/images/projects/smart_stock.png",
+    previewImage: "/images/projects/Code_Git/smart_code.png", 
+    previewImgEye:"/images/projects/smart_stock.png", 
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/gabriellemosc/Web-Portofolio",
-    previewUrl: "/",
+    gitUrl: "https://github.com/gabriellemosc/Inventory-Management-System.git",
+    previewUrl: "https://inventory-management-system-zgac.onrender.com/login/?next=/",
   },
   {
       id: 2,
