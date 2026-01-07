@@ -19,13 +19,14 @@ const projectsData = [
   },
   {
       id: 2,
-      title: "E-commerce Project",
-      description: 'An e-commerce inspired by a Brazilian web store called "Reserva", with payment and login system.',
-      image: "/images/projects/reserva_project.png",
-      previewImage: "/images/projects/Code_Git/reserva_project.png", 
+      title: "Email Classifier",
+      description: 'A web application that automatically classifies emails as productive or unproductive and generates context-aware responses.',
+      image: "/images/projects/email_classifier.png",
+      previewImage: "/images/projects/Code_Git/email_classifier_git.png", 
+      previewImgEye:"/images/projects/email_classifier.png",
       tag: ["All", "Web"],
-      gitUrl: "https://github.com/gabriellemosc/Ecommerce_Project",
-      previewUrl: null,
+      gitUrl: "https://github.com/gabriellemosc/Email-Classifier.git",
+      previewUrl: "https://email-classifier-gn8u.onrender.com/",
     },
 
 
